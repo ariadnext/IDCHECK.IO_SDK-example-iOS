@@ -14,8 +14,6 @@
 		026B95EA1E92915600FB2C31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 026B95E81E92915600FB2C31 /* LaunchScreen.storyboard */; };
 		026B95F51E92915600FB2C31 /* idcheckio_exampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B95F41E92915600FB2C31 /* idcheckio_exampleTests.swift */; };
 		026B96001E92915600FB2C31 /* idcheckio_exampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B95FF1E92915600FB2C31 /* idcheckio_exampleUITests.swift */; };
-		026B960F1E9292B200FB2C31 /* SmartsdkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 026B960D1E92929A00FB2C31 /* SmartsdkKit.framework */; };
-		026B96101E9292B200FB2C31 /* SmartsdkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 026B960D1E92929A00FB2C31 /* SmartsdkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		026B96141E9292E500FB2C31 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 026B96131E9292E500FB2C31 /* libiconv.tbd */; };
 		026B96161E9292EB00FB2C31 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 026B96151E9292EB00FB2C31 /* libz.tbd */; };
 		026B96181E9292F400FB2C31 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 026B96171E9292F400FB2C31 /* SystemConfiguration.framework */; };
@@ -27,7 +25,9 @@
 		026B96241E92934100FB2C31 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 026B96231E92934100FB2C31 /* Accelerate.framework */; };
 		026B96261E92938400FB2C31 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 026B96251E92938400FB2C31 /* CoreVideo.framework */; };
 		026B96281E92938C00FB2C31 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 026B96271E92938C00FB2C31 /* UIKit.framework */; };
-		0290E4A51E929DAE0062B174 /* licence.axt in Resources */ = {isa = PBXBuildFile; fileRef = 0290E4A41E929D8B0062B174 /* licence.axt */; };
+		02FC7E861FC4574500700A8D /* licence.axt in Resources */ = {isa = PBXBuildFile; fileRef = 02FC7E851FC4574300700A8D /* licence.axt */; };
+		02FC7E891FC4577100700A8D /* SmartsdkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02FC7E871FC4576900700A8D /* SmartsdkKit.framework */; };
+		02FC7E8A1FC4577100700A8D /* SmartsdkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02FC7E871FC4576900700A8D /* SmartsdkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				026B96101E9292B200FB2C31 /* SmartsdkKit.framework in Embed Frameworks */,
+				02FC7E8A1FC4577100700A8D /* SmartsdkKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,7 +75,6 @@
 		026B95FB1E92915600FB2C31 /* idcheckio-exampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "idcheckio-exampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		026B95FF1E92915600FB2C31 /* idcheckio_exampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = idcheckio_exampleUITests.swift; sourceTree = "<group>"; };
 		026B96011E92915600FB2C31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		026B960D1E92929A00FB2C31 /* SmartsdkKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SmartsdkKit.framework; path = "smartsdk-IOS-4.1.3-ios-framework/SmartsdkKit.framework"; sourceTree = "<group>"; };
 		026B96131E9292E500FB2C31 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		026B96151E9292EB00FB2C31 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		026B96171E9292F400FB2C31 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -88,7 +87,8 @@
 		026B96251E92938400FB2C31 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		026B96271E92938C00FB2C31 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		026B96291E92949300FB2C31 /* idcheckio-example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "idcheckio-example-Bridging-Header.h"; sourceTree = "<group>"; };
-		0290E4A41E929D8B0062B174 /* licence.axt */ = {isa = PBXFileReference; lastKnownFileType = file; path = licence.axt; sourceTree = "<group>"; };
+		02FC7E851FC4574300700A8D /* licence.axt */ = {isa = PBXFileReference; lastKnownFileType = file; path = licence.axt; sourceTree = "<group>"; };
+		02FC7E871FC4576900700A8D /* SmartsdkKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SmartsdkKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,13 +101,13 @@
 				026B96241E92934100FB2C31 /* Accelerate.framework in Frameworks */,
 				026B96221E92931D00FB2C31 /* AssetsLibrary.framework in Frameworks */,
 				026B96201E92931400FB2C31 /* CoreMedia.framework in Frameworks */,
+				02FC7E891FC4577100700A8D /* SmartsdkKit.framework in Frameworks */,
 				026B961E1E92930C00FB2C31 /* AVFoundation.framework in Frameworks */,
 				026B961C1E92930400FB2C31 /* ImageIO.framework in Frameworks */,
 				026B961A1E9292FD00FB2C31 /* CoreMotion.framework in Frameworks */,
 				026B96181E9292F400FB2C31 /* SystemConfiguration.framework in Frameworks */,
 				026B96161E9292EB00FB2C31 /* libz.tbd in Frameworks */,
 				026B96141E9292E500FB2C31 /* libiconv.tbd in Frameworks */,
-				026B960F1E9292B200FB2C31 /* SmartsdkKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +131,8 @@
 		026B95D31E92915600FB2C31 = {
 			isa = PBXGroup;
 			children = (
-				026B960D1E92929A00FB2C31 /* SmartsdkKit.framework */,
+				02FC7E851FC4574300700A8D /* licence.axt */,
+				02FC7E871FC4576900700A8D /* SmartsdkKit.framework */,
 				026B95DE1E92915600FB2C31 /* idcheckio-example */,
 				026B95F31E92915600FB2C31 /* idcheckio-exampleTests */,
 				026B95FE1E92915600FB2C31 /* idcheckio-exampleUITests */,
@@ -153,7 +154,6 @@
 		026B95DE1E92915600FB2C31 /* idcheckio-example */ = {
 			isa = PBXGroup;
 			children = (
-				0290E4A41E929D8B0062B174 /* licence.axt */,
 				026B95DF1E92915600FB2C31 /* AppDelegate.swift */,
 				026B95E11E92915600FB2C31 /* ViewController.swift */,
 				026B95E31E92915600FB2C31 /* Main.storyboard */,
@@ -311,7 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				026B95EA1E92915600FB2C31 /* LaunchScreen.storyboard in Resources */,
-				0290E4A51E929DAE0062B174 /* licence.axt in Resources */,
+				02FC7E861FC4574500700A8D /* licence.axt in Resources */,
 				026B95E71E92915600FB2C31 /* Assets.xcassets in Resources */,
 				026B95E51E92915600FB2C31 /* Main.storyboard in Resources */,
 			);
@@ -505,11 +505,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/smartsdk-IOS-4.1.3-ios-framework",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "idcheckio-example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ariadnext.idcheckio-example";
+				PRODUCT_BUNDLE_IDENTIFIER = test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "idcheckio-example/idcheckio-example-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -524,11 +525,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/smartsdk-IOS-4.1.3-ios-framework",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "idcheckio-example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ariadnext.idcheckio-example";
+				PRODUCT_BUNDLE_IDENTIFIER = test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "idcheckio-example/idcheckio-example-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

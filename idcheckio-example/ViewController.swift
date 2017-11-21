@@ -45,12 +45,12 @@ class ViewController: UIViewController {
         addObserversForSDK()
         NSLog("Start SDK IDCHECK.IO")
         let sdkParams: AXTSdkParams = AXTSdkParams()
-        sdkParams.extractData = true
-        sdkParams.displayResult = true
+        sdkParams.setExtractData(true)
+        sdkParams.setDisplayResult(true)
         sdkParams.doctype = .ID
-        sdkParams.useFrontCamera = false
-        sdkParams.scanBothSide = true
-        sdkParams.dataExtractionRequirement = .MRZ_FOUND
+        sdkParams.setUseFrontCamera(false)
+        sdkParams.setScanBothSide(true)
+        sdkParams.setDataExtractionRequirement(.MRZ_FOUND)
         let sdkViewController: UIViewController = AXTCaptureInterface.captureInterfaceInstance().getViewControllerCaptureSdk(sdkParams)
         self.present(sdkViewController, animated: true, completion: nil)
     }
