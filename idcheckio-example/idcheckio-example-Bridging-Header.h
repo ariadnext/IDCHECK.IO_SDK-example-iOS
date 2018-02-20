@@ -10,6 +10,7 @@
 #import <SmartsdkKit/AXTDataExtractionRequirement.h>
 #import <SmartsdkKit/AXTDocument.h>
 #import <SmartsdkKit/AXTDocumentType.h>
+#import <SmartsdkKit/AXTDocumentIdentity.h>
 #import <SmartsdkKit/AXTDocumentValidityResult.h> 
 #import <SmartsdkKit/AXTImageResult.h>
 #import <SmartsdkKit/AXTSdkParams.h>

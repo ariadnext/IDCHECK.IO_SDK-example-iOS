@@ -17,7 +17,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let sdkInit: AXTSdkInit = AXTSdkInit()
+        sdkInit.licenseFilename = "licence"
+        sdkInit.timeoutActivation = 20
+        
+        if(!AXTCaptureInterface.captureInterfaceInstance().sdkIsActivated()){
+            AXTCaptureInterface.captureInterfaceInstance().initCaptureSdk(sdkInit, withCompletion: { (result, error) in
+                if(error == nil){
+                    NSLog("Initilization successed!")
+                } else {
+                    NSLog("Error on initialization : %@", error ?? "Init error")
+                }
+            })
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,12 +61,20 @@ class ViewController: UIViewController {
         addObserversForSDK()
         NSLog("Start SDK IDCHECK.IO")
         let sdkParams: AXTSdkParams = AXTSdkParams()
-        sdkParams.setExtractData(true)
-        sdkParams.setDisplayResult(true)
+        let parameters: NSMutableDictionary = NSMutableDictionary()
+        parameters.setObject(true, forKey:"EXTRACT_DATA" as NSCopying)
+        parameters.setObject(true, forKey:"DISPLAY_RESULT" as NSCopying)
+        parameters.setObject(true, forKey:"SCAN_BOTH_SIDE" as NSCopying)
+        parameters.setObject(true, forKey:"USE_HD" as NSCopying)
+        parameters.setObject(false, forKey:"USE_FRONT_CAMERA" as NSCopying)
+        parameters.setObject("MRZ_FOUND", forKey:"DATA_EXTRACTION_REQUIREMENT" as NSCopying)
+        
+        let extraParams: NSMutableDictionary = NSMutableDictionary()
+        extraParams.setObject(15, forKey:AXT_MANUAL_BUTTON_TIMER as NSCopying)
+        
         sdkParams.doctype = .ID
-        sdkParams.setUseFrontCamera(false)
-        sdkParams.setScanBothSide(true)
-        sdkParams.setDataExtractionRequirement(.MRZ_FOUND)
+        sdkParams.parameters = parameters
+        sdkParams.extraParameters = extraParams
         let sdkViewController: UIViewController = AXTCaptureInterface.captureInterfaceInstance().getViewControllerCaptureSdk(sdkParams)
         self.present(sdkViewController, animated: true, completion: nil)
     }
@@ -84,7 +108,9 @@ class ViewController: UIViewController {
         if let versoPath = sdkResult.mapImageCropped.object(forKey: IMAGES_VERSO) as? AXTImageResult {
             verso.image = UIImage(contentsOfFile: versoPath.imagePath)
         }
-        data.text = "\(sdkResult.document.documentNumber!) / \(sdkResult.document.codeline!) / \(sdkResult.document.name!) / \(sdkResult.document.firstname!) / \(sdkResult.document.birthdate!) / \(sdkResult.document.emitDate!)"
+        if let identityDocument = sdkResult.mapDocument.object(forKey: IDENTITY_DOCUMENT) as? AXTDocumentIdentity {
+            data.text = "\(identityDocument.fields.object(forKey: DOCUMENT_NUMBER)!) / \(identityDocument.fields.object(forKey: CODELINE)!) / \(identityDocument.fields.object(forKey: LAST_NAMES)!) / \(identityDocument.fields.object(forKey: FIRST_NAMES)!) / \(identityDocument.fields.object(forKey: BIRTH_DATE)!) / \(identityDocument.fields.object(forKey: EMIT_DATE)!)"
+        }
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {

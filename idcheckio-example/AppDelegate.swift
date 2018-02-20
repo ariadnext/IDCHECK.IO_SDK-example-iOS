@@ -15,13 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        if let file = Bundle.main.path(forResource: "licence", ofType: "axt") {
-            NSLog("File licence.axt found")
-        } else {
-            NSLog("File licence.axt not found")
-        }
-        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
-        AXTCaptureInterface.captureInterfaceInstance().initCaptureSdk(withLicense: "licence")
         // Override point for customization after application launch.
         return true
     }
