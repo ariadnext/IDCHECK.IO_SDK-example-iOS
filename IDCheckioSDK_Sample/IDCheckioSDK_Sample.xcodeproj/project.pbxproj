@@ -17,6 +17,7 @@
 		9D319890B08CB113041E2A99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF601ACA9CD667BAD3CD43B /* AppDelegate.swift */; };
 		BA70BB1822CBBD2200CA303C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA70BB1722CBBD2200CA303C /* HomeViewController.swift */; };
 		BA70BB1B22CBC1DD00CA303C /* IDCheckIOUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA70BB1A22CBC1DD00CA303C /* IDCheckIOUtil.swift */; };
+		BA70BB1D22CBC60300CA303C /* licence.axt in Resources */ = {isa = PBXBuildFile; fileRef = BA70BB1C22CBC60300CA303C /* licence.axt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		9C1B14485BA79F076EA819E3 /* Pods-IDCheckioSDK_Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDCheckioSDK_Sample.release.xcconfig"; path = "Target Support Files/Pods-IDCheckioSDK_Sample/Pods-IDCheckioSDK_Sample.release.xcconfig"; sourceTree = "<group>"; };
 		BA70BB1722CBBD2200CA303C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BA70BB1A22CBC1DD00CA303C /* IDCheckIOUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCheckIOUtil.swift; sourceTree = "<group>"; };
+		BA70BB1C22CBC60300CA303C /* licence.axt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = licence.axt; sourceTree = "<group>"; };
 		C949044C7DC3338771EDCEEC /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA737903C905A56B8D1C11D /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F11FFD97D8F30B04FFDB8E92 /* LaunchScreen.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		45488D1936C9B02041FA584F = {
 			isa = PBXGroup;
 			children = (
+				BA70BB1C22CBC60300CA303C /* licence.axt */,
 				6C75FE8FE6772EEACBC8292E /* IDCheckioSDK_Sample */,
 				8C16070848B503248B0DDADD /* UnitTests */,
 				34B542C2DC904E242FC80D74 /* Frameworks */,
@@ -315,6 +318,7 @@
 				45D9CF8FD35F4049FC1C17E7 /* Main.storyboard in Resources */,
 				55F30220BBB811ABA7C292A3 /* LaunchScreen.xib in Resources */,
 				5B5EA23912AA37631D7FABDC /* Settings.bundle in Resources */,
+				BA70BB1D22CBC60300CA303C /* licence.axt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

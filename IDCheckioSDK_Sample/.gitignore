@@ -1,6 +1,9 @@
 # OS X Finder
 .DS_Store
 
+# AXT License file
+*.axt
+
 # Xcode per-user config
 *.mode1
 *.mode1v3
