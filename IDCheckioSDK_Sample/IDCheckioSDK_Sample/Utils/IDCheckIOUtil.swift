@@ -9,6 +9,7 @@
 import Foundation
 import IDCheckIOSDK
 
+
 class IDCheckIOUtil {
     
     static func idParams() -> SDKParams {
