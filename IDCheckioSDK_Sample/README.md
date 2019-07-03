@@ -9,11 +9,14 @@ This will:
  - Install the gem dependencies
  - Install the pod dependencies
 
-## Testing ##
+## Add your SDK's licence
 
-Run `bin/test`
+To be able to use the sample, please :
 
-This will run the tests from the command line, and pipe the result through
-[XCPretty][].
+- Add your license file in the root folder of this project
+  - _(same directory as the `IDCheckioSDK_Sample.xcworkspace` and the `Podfile`)_
+- Name it "**licence.axt**"
 
-[XCPretty]: https://github.com/supermarin/xcpretty
+## Run the project
+
+You are now good to go !
