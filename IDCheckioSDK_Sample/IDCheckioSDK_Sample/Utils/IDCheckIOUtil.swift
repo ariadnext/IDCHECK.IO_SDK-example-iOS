@@ -17,9 +17,8 @@ class IDCheckIOUtil {
         
         params.documentType = .id
         
-        params.feedbackLevel = .all
-        params.scanBothSides = .enabled
-        params.confirmType = .dataOrPicture
+        params.scanBothSides = .enabled // if needed and available, will ask (or not), or force to scan the second side of the document
+        params.confirmType = .dataOrPicture // ask a confirmation to the user during the session
         
         params.side1Extraction.codeline = .decoded
         params.side1Extraction.face = true
