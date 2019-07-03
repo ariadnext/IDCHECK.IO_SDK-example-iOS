@@ -149,14 +149,14 @@ extension HomeViewController: IdcheckioDelegate {
     }
     
     func display(result: IdcheckioResult?, error: Error?) {
-        var message: String = "No result to display"
+        var message: String = "Thank you for your session !"
         if let document = result?.document {
             switch document {
             case .identity(let idDocument):
                 message = "Hello \(idDocument.fields[.firstNames]?.value ?? "") \(idDocument.fields[.lastNames]?.value ?? "")"
             }
-        } else {
-            message = error?.localizedDescription ?? "Unknown result"
+        } else if let error = error {
+            message = error.localizedDescription
         }
         
         showAlert(with: message)
