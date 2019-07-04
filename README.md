@@ -1,13 +1,10 @@
-# IDCheckioSDK_Sample #
+# IDCheckioSDK_Sample - MobileSDK v5 #
 
 ## Setup ##
 
-Run `bin/setup`
+Run `pod install` to install the pod dependencies
 
-This will:
-
- - Install the gem dependencies
- - Install the pod dependencies
+> More information at https://cocoapods.org/
 
 ## Add your SDK's licence
 
