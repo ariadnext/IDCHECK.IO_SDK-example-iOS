@@ -21,9 +21,9 @@ class IDCheckIOUtil {
         params.confirmType = .dataOrPicture // ask a confirmation to the user during the session
         
         params.side1Extraction.codeline = .decoded
-        params.side1Extraction.face = true
+        params.side1Extraction.face = .enabled
         params.side2Extraction.codeline = .any
-        params.side2Extraction.face = false
+        params.side2Extraction.face = .disabled
         
         return params
     }
