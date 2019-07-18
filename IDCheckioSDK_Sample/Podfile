@@ -8,8 +8,8 @@ use_frameworks!
 
 target 'IDCheckioSDK_Sample' do
   # Application Pods
-  pod 'IDCheckIOSDK', '5.1.3'
-  
+  pod 'IDCheckIOSDK', '5.1.4'
+
 end
 
 abstract_target :unit_tests do
@@ -34,4 +34,3 @@ post_install do | installer |
     FileUtils.cp_r(pods_acknowledgements_path, "#{settings_bundle_path}/Acknowledgements.plist", :remove_destination => true)
   end
 end
-
