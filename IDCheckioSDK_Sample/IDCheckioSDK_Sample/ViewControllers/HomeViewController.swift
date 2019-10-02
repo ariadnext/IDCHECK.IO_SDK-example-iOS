@@ -100,6 +100,8 @@ extension HomeViewController {
         
         DispatchQueue.main.async { [weak self, online] in
             let viewController = UIViewController()
+            viewController.modalPresentationStyle = .fullScreen
+            
             let cameraView = IdcheckioView()
             
             cameraView.translatesAutoresizingMaskIntoConstraints = false
