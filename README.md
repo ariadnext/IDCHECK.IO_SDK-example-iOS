@@ -1,5 +1,7 @@
 # IDCheckioSDK_Sample - MobileSDK v5 #
 
+> 💡 For older SmartSDK sample (v4.x.x), please checkout the [sdk_v4](https://github.com/ariadnext/IDCHECK.IO_SDK-example-iOS/tree/feature/MobileSDK_v5) branch
+
 ## Setup ##
 
 Open your terminal and execute the following commands :
