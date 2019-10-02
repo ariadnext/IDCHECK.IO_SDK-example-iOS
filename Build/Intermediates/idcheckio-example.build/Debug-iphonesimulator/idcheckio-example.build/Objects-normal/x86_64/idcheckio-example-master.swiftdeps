@@ -1,6 +1,0 @@
-version: "Apple Swift version 3.0.2 (swiftlang-800.0.63 clang-800.0.42.1)"
-options: "da1d161d47400c3941a068c1d9673825"
-build_time: [544547014, 621497000]
-inputs:
-  "/Users/djagoudel/Desktop/idcheckio-example/idcheckio-example/ViewController.swift": [544546978, 0]
-  "/Users/djagoudel/Desktop/idcheckio-example/idcheckio-example/AppDelegate.swift": [544546098, 0]
