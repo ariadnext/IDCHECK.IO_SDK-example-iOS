@@ -156,6 +156,8 @@ extension HomeViewController: IdcheckioDelegate {
             switch document {
             case .identity(let idDocument):
                 message = "Hello \(idDocument.fields[.firstNames]?.value ?? "") \(idDocument.fields[.lastNames]?.value ?? "")"
+            case .vehicleRegistration(let registrationDoc):
+                message = "\(registrationDoc.fields[.make]?.value ?? "") \(registrationDoc.fields[.model]?.value ?? "")"
             }
         } else if let error = error {
             message = error.localizedDescription
