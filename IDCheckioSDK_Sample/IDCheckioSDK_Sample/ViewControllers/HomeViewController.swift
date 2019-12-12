@@ -102,7 +102,7 @@ extension HomeViewController {
             let viewController = UIViewController()
             viewController.modalPresentationStyle = .fullScreen
             
-            let cameraView = IdcheckioView()
+            let cameraView = IdcheckioView(frame: .zero)
             
             cameraView.translatesAutoresizingMaskIntoConstraints = false
             viewController.view.frame = self?.view.frame ?? .zero
