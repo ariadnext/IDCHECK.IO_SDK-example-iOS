@@ -14,14 +14,14 @@ typealias IDCheckIOResultCompletionBlock = (_ result: IdcheckioResult?, _ error:
 class HomeViewController: UIViewController {
     
     // MARK: Outlets
-    @IBOutlet weak var versionLabel: UILabel! {
+    @IBOutlet private weak var versionLabel: UILabel! {
         didSet {
             versionLabel.text = "SDK v.\(Idcheckio.shared.sdkVersion())"
         }
     }
-    @IBOutlet weak var idSwitch: UISwitch!
-    @IBOutlet weak var livenessSwitch: UISwitch!
-    @IBOutlet weak var sessionTypeSwitch: UISwitch!
+    @IBOutlet private weak var idSwitch: UISwitch!
+    @IBOutlet private weak var livenessSwitch: UISwitch!
+    @IBOutlet private weak var sessionTypeSwitch: UISwitch!
     
     // MARK: Properties
     var selectedParams: SDKParams?
