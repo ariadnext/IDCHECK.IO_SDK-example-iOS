@@ -39,7 +39,7 @@ class HomeViewController: UIViewController {
         Idcheckio.shared.delegate = self
         
         // Activate SDK with your licence file (name it "licence.axt" and place it in the root of the project folder)
-        Idcheckio.shared.activate(withLicenseFilename: "licence", extractData: true) { (error: IdcheckioError?) in
+        Idcheckio.shared.activate(withLicenseFilename: "licence", extractData: true, sdkEnvironment: .demo) { (error: IdcheckioError?) in
             if let error = error {
                 print("Error on initialization :\(error.localizedDescription)")
 
@@ -120,7 +120,6 @@ extension HomeViewController {
                     let folderUid = self?.previousResult?.folderUid
                     let context = CISContext(folderUid: folderUid, referenceTaskUid: referenceTaskUid, referenceDocUid: referenceDocUid)
                     Idcheckio.shared.startOnline(with: cameraView,
-                                                 licenseFilename: "licence",
                                                  cisContext: context,
                                                  completion: { [weak self] (error) in
                                                     self?.display(result: nil, error: error)
