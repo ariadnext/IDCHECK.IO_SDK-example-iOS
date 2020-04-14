@@ -14,14 +14,14 @@ typealias IDCheckIOResultCompletionBlock = (_ result: IdcheckioResult?, _ error:
 class HomeViewController: UIViewController {
     
     // MARK: Outlets
-    @IBOutlet weak var versionLabel: UILabel! {
+    @IBOutlet private weak var versionLabel: UILabel! {
         didSet {
             versionLabel.text = "SDK v.\(Idcheckio.shared.sdkVersion())"
         }
     }
-    @IBOutlet weak var idSwitch: UISwitch!
-    @IBOutlet weak var livenessSwitch: UISwitch!
-    @IBOutlet weak var sessionTypeSwitch: UISwitch!
+    @IBOutlet private weak var idSwitch: UISwitch!
+    @IBOutlet private weak var livenessSwitch: UISwitch!
+    @IBOutlet private weak var sessionTypeSwitch: UISwitch!
     
     // MARK: Properties
     var selectedParams: SDKParams?
@@ -39,7 +39,7 @@ class HomeViewController: UIViewController {
         Idcheckio.shared.delegate = self
         
         // Activate SDK with your licence file (name it "licence.axt" and place it in the root of the project folder)
-        Idcheckio.shared.activate(withLicenseFilename: "licence", extractData: true) { (error: IdcheckioError?) in
+        Idcheckio.shared.activate(withLicenseFilename: "licence", extractData: true, sdkEnvironment: .demo) { (error: IdcheckioError?) in
             if let error = error {
                 print("Error on initialization :\(error.localizedDescription)")
 
@@ -120,7 +120,6 @@ extension HomeViewController {
                     let folderUid = self?.previousResult?.folderUid
                     let context = CISContext(folderUid: folderUid, referenceTaskUid: referenceTaskUid, referenceDocUid: referenceDocUid)
                     Idcheckio.shared.startOnline(with: cameraView,
-                                                 licenseFilename: "licence",
                                                  cisContext: context,
                                                  completion: { [weak self] (error) in
                                                     self?.display(result: nil, error: error)
