@@ -12,7 +12,7 @@ import IDCheckIOSDK
 typealias IDCheckIOResultCompletionBlock = (_ result: IdcheckioResult?, _ error: Error?) -> Void
 
 class HomeViewController: UIViewController {
-    
+
     // MARK: Outlets
     @IBOutlet private weak var versionLabel: UILabel! {
         didSet {
@@ -22,22 +22,22 @@ class HomeViewController: UIViewController {
     @IBOutlet private weak var idSwitch: UISwitch!
     @IBOutlet private weak var livenessSwitch: UISwitch!
     @IBOutlet private weak var sessionTypeSwitch: UISwitch!
-    
+
     // MARK: Properties
     var selectedParams: SDKParams?
     var previousResult: IdcheckioResult?
-    
+
     // MARK: Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sdkInitialization()
     }
-    
+
     private func sdkInitialization() {
         // Optimize SDK loading using this line:
         Idcheckio.shared.preload(extractData: true)
         Idcheckio.shared.delegate = self
-        
+
         // Activate SDK with your licence file (name it "licence.axt" and place it in the root of the project folder)
         Idcheckio.shared.activate(withLicenseFilename: "licence", extractData: true, sdkEnvironment: .demo) { (error: IdcheckioError?) in
             if let error = error {
@@ -53,10 +53,10 @@ class HomeViewController: UIViewController {
             print("Initialization successed !")
         }
     }
-    
+
     // MARK: Actions
     @IBAction func startButtonTouchUpInside(_ sender: Any) {
-        
+
         if let params = selectedParams {
             try? Idcheckio.shared.setParams(params)
             launchSession(online: sessionTypeSwitch.isOn)
@@ -64,15 +64,15 @@ class HomeViewController: UIViewController {
             showAlert(with: "Please select a document type to start a session.")
         }
     }
-    
+
     @IBAction func clearContextTouchUpInside(_ sender: Any) {
         previousResult = nil
         showAlert(with: "Context cleared !")
     }
-    
+
     @IBAction func docTypeSwitchValueChanged(_ sender: Any) {
         guard let switchSender = sender as? UISwitch else { return }
-        
+
         if switchSender.isOn {
             switch switchSender {
             case idSwitch:
@@ -84,7 +84,7 @@ class HomeViewController: UIViewController {
         } else {
             selectedParams = nil
         }
-        
+
         [idSwitch, livenessSwitch].filter({ $0 != switchSender }).forEach { $0?.setOn(false, animated: true) }
     }
 }
@@ -96,14 +96,14 @@ extension HomeViewController {
             let livenessToken: String = "YOUR_LIVENESS_SESSION_TOKEN"
             Idcheckio.shared.extraParameters.token = livenessToken
         }
-        
-        
+
+
         DispatchQueue.main.async { [weak self, online] in
             let viewController = UIViewController()
             viewController.modalPresentationStyle = .fullScreen
-            
+
             let cameraView = IdcheckioView(frame: .zero)
-            
+
             cameraView.translatesAutoresizingMaskIntoConstraints = false
             viewController.view.frame = self?.view.frame ?? .zero
             viewController.view.addSubview(cameraView)
@@ -112,7 +112,7 @@ extension HomeViewController {
             cameraView.trailingAnchor.constraint(equalTo: viewController.view.trailingAnchor).isActive = true
             cameraView.topAnchor.constraint(equalTo: viewController.view.topAnchor).isActive = true
             cameraView.bottomAnchor.constraint(equalTo: viewController.view.bottomAnchor).isActive = true
-            
+
             self?.present(viewController, animated: true, completion: { [self, cameraView, online] in
                 if online {
                     let referenceTaskUid = self?.previousResult?.taskUid
@@ -122,11 +122,19 @@ extension HomeViewController {
                     Idcheckio.shared.startOnline(with: cameraView,
                                                  cisContext: context,
                                                  completion: { [weak self] (error) in
-                                                    self?.display(result: nil, error: error)
+                                                    if let error = error {
+                                                        self?.dismiss(animated: true) {
+                                                            self?.display(result: nil, error: error)
+                                                        }
+                                                    }
                     })
                 } else {
                     Idcheckio.shared.start(with: cameraView, completion: { [weak self] (error) in
-                        self?.display(result: nil, error: error)
+                        if let error = error {
+                            self?.dismiss(animated: true) {
+                                self?.display(result: nil, error: error)
+                            }
+                        }
                     })
                 }
             })
@@ -135,7 +143,7 @@ extension HomeViewController {
 }
 
 extension HomeViewController: IdcheckioDelegate {
-    
+
     func idcheckioFinishedWithResult(_ result: IdcheckioResult?, error: Error?) {
         previousResult = result
         DispatchQueue.main.async { [weak self, result, error] in
@@ -144,11 +152,11 @@ extension HomeViewController: IdcheckioDelegate {
             })
         }
     }
-    
+
     func idcheckioDidSendEvent(interaction: IdcheckioInteraction, msg: IdcheckioMsg?) {
         //Nothing to do...
     }
-    
+
     func display(result: IdcheckioResult?, error: Error?) {
         var message: String = "Thank you for your session !"
         if let document = result?.document {
@@ -161,7 +169,7 @@ extension HomeViewController: IdcheckioDelegate {
         } else if let error = error {
             message = error.localizedDescription
         }
-        
+
         showAlert(with: message)
     }
 }
