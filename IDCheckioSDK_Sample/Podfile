@@ -8,7 +8,7 @@ use_frameworks!
 
 target 'IDCheckioSDK_Sample' do
   # Application Pods
-  pod 'IDCheckIOSDK', '5.6.1'
+  pod 'IDCheckIOSDK', '5.7.0'
 
 end
 
