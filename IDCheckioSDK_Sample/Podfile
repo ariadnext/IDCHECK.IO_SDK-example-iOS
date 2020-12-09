@@ -1,4 +1,4 @@
-source 'https://github.com/CocoaPods/Specs'
+source 'https://github.com/CocoaPods/Specs.git'
 source 'https://git-externe.rennes.ariadnext.com/idcheckio/axt-podspecs.git'
 
 platform :ios, '10.0'
@@ -8,7 +8,7 @@ use_frameworks!
 
 target 'IDCheckioSDK_Sample' do
   # Application Pods
-  pod 'IDCheckIOSDK', '5.7.0'
+  pod 'IDCheckIOSDK', '5.9.0'
 
 end
 

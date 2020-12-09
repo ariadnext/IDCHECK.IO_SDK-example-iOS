@@ -123,16 +123,20 @@ extension HomeViewController {
                                                  cisContext: context,
                                                  completion: { [weak self] (error) in
                                                     if let error = error {
-                                                        self?.dismiss(animated: true) {
-                                                            self?.display(result: nil, error: error)
+                                                        DispatchQueue.main.async {
+                                                            self?.dismiss(animated: true) {
+                                                                self?.display(result: nil, error: error)
+                                                            }
                                                         }
                                                     }
-                    })
+                                                 })
                 } else {
                     Idcheckio.shared.start(with: cameraView, completion: { [weak self] (error) in
                         if let error = error {
-                            self?.dismiss(animated: true) {
-                                self?.display(result: nil, error: error)
+                            DispatchQueue.main.async {
+                                self?.dismiss(animated: true) {
+                                    self?.display(result: nil, error: error)
+                                }
                             }
                         }
                     })

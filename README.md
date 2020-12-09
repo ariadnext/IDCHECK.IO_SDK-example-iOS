@@ -9,7 +9,7 @@ Open your terminal and execute the following commands :
 > cd IDCheckioSDK_Sample
 > pod install
 ```
-
+⚠️ Cocoapods v1.10 is needed.
 > More information at https://cocoapods.org/
 
 ## Add your SDK's licence
