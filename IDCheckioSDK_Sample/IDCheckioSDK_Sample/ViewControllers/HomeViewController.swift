@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     // MARK: Outlets
     @IBOutlet private weak var versionLabel: UILabel! {
         didSet {
-            versionLabel.text = "SDK v.\(Idcheckio.shared.sdkVersion())"
+            versionLabel.text = "SDK v.\(Idcheckio.shared.sdkVersion)"
         }
     }
     @IBOutlet private weak var idSwitch: UISwitch!
