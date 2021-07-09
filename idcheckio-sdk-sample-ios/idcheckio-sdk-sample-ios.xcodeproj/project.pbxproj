@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7CB20C1A269835D400AD4B7A /* SDKConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB20C19269835D400AD4B7A /* SDKConfig.swift */; };
+		B603EDD825F76CE200E2CE7A /* OnlineFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B603EDD725F76CE200E2CE7A /* OnlineFlowCoordinator.swift */; };
+		B603EDDB25F775DB00E2CE7A /* OnlineFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B603EDDA25F775DB00E2CE7A /* OnlineFlowViewController.swift */; };
+		B60857BE25C07F6300AABCBB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60857BD25C07F6300AABCBB /* Coordinator.swift */; };
+		B60857C125C07FAE00AABCBB /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60857C025C07FAE00AABCBB /* MainCoordinator.swift */; };
+		B60857C625C086C100AABCBB /* ScenariosCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60857C525C086C100AABCBB /* ScenariosCoordinator.swift */; };
+		B611BED125E4126900F0A145 /* DisplayInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611BED025E4126900F0A145 /* DisplayInfoViewController.swift */; };
+		B611BEEB25E41B7800F0A145 /* DisplayInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611BEEA25E41B7800F0A145 /* DisplayInfoView.swift */; };
+		B611BEEE25E41BA500F0A145 /* DisplayInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B611BEED25E41BA500F0A145 /* DisplayInfoView.xib */; };
+		B62269DE25D19B4C00BAD6E1 /* AdvancedCaptureCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62269DD25D19B4C00BAD6E1 /* AdvancedCaptureCoordinator.swift */; };
+		B62269E225D19C2600BAD6E1 /* AdvancedSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62269E125D19C2600BAD6E1 /* AdvancedSessionViewController.swift */; };
+		B674365225ECE2DA00F817CF /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B674365125ECE2DA00F817CF /* ResultViewController.swift */; };
+		B674366425ECF4FF00F817CF /* UIStackView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B674366325ECF4FF00F817CF /* UIStackView+Utils.swift */; };
+		B6750FC025F135DB0011A536 /* AnalyzeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6750FBF25F135DB0011A536 /* AnalyzeManager.swift */; };
+		B6C9D72B25BF08FC0060B0DE /* SDKScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C9D72A25BF08FC0060B0DE /* SDKScenario.swift */; };
+		B6D37A5C25C1C85100D012C8 /* SimpleCaptureCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D37A5B25C1C85100D012C8 /* SimpleCaptureCoordinator.swift */; };
+		B6D37C5E25C2F51000D012C8 /* licence.axt in Resources */ = {isa = PBXBuildFile; fileRef = B6D37C5D25C2F51000D012C8 /* licence.axt */; };
+		B6D8222825BB1B7500FFF853 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D8222725BB1B7500FFF853 /* AppDelegate.swift */; };
+		B6D8222F25BB1B7500FFF853 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D8222D25BB1B7500FFF853 /* Main.storyboard */; };
+		B6D8223125BB1B7700FFF853 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D8223025BB1B7700FFF853 /* Assets.xcassets */; };
+		B6D8223425BB1B7700FFF853 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D8223225BB1B7700FFF853 /* LaunchScreen.storyboard */; };
+		B6DC3D9B25C0547200DDD89D /* ScenariosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DC3D9A25C0547200DDD89D /* ScenariosViewController.swift */; };
+		B6DC3D9F25C05D2C00DDD89D /* ChoiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DC3D9E25C05D2C00DDD89D /* ChoiceCollectionViewCell.swift */; };
+		E48FF7404235C09CE9C307A6 /* Pods_idcheckio_sdk_sample_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EBC2A146FC0F209DAAC3168 /* Pods_idcheckio_sdk_sample_ios.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		418B464675DEF51D9644AC88 /* Pods-idcheckio-sdk-sample-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-idcheckio-sdk-sample-ios.release.xcconfig"; path = "Target Support Files/Pods-idcheckio-sdk-sample-ios/Pods-idcheckio-sdk-sample-ios.release.xcconfig"; sourceTree = "<group>"; };
+		6EBC2A146FC0F209DAAC3168 /* Pods_idcheckio_sdk_sample_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_idcheckio_sdk_sample_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CB20C19269835D400AD4B7A /* SDKConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKConfig.swift; sourceTree = "<group>"; };
+		B603EDD725F76CE200E2CE7A /* OnlineFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineFlowCoordinator.swift; sourceTree = "<group>"; };
+		B603EDDA25F775DB00E2CE7A /* OnlineFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineFlowViewController.swift; sourceTree = "<group>"; };
+		B60857BD25C07F6300AABCBB /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B60857C025C07FAE00AABCBB /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		B60857C525C086C100AABCBB /* ScenariosCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenariosCoordinator.swift; sourceTree = "<group>"; };
+		B611BED025E4126900F0A145 /* DisplayInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayInfoViewController.swift; sourceTree = "<group>"; };
+		B611BEEA25E41B7800F0A145 /* DisplayInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayInfoView.swift; sourceTree = "<group>"; };
+		B611BEED25E41BA500F0A145 /* DisplayInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayInfoView.xib; sourceTree = "<group>"; };
+		B62269DD25D19B4C00BAD6E1 /* AdvancedCaptureCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedCaptureCoordinator.swift; sourceTree = "<group>"; };
+		B62269E125D19C2600BAD6E1 /* AdvancedSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSessionViewController.swift; sourceTree = "<group>"; };
+		B674365125ECE2DA00F817CF /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		B674366325ECF4FF00F817CF /* UIStackView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Utils.swift"; sourceTree = "<group>"; };
+		B6750FBF25F135DB0011A536 /* AnalyzeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeManager.swift; sourceTree = "<group>"; };
+		B6C9D72A25BF08FC0060B0DE /* SDKScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKScenario.swift; sourceTree = "<group>"; };
+		B6D37A5B25C1C85100D012C8 /* SimpleCaptureCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCaptureCoordinator.swift; sourceTree = "<group>"; };
+		B6D37C5D25C2F51000D012C8 /* licence.axt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = licence.axt; sourceTree = "<group>"; };
+		B6D8222425BB1B7500FFF853 /* idcheckio-sdk-sample-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "idcheckio-sdk-sample-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6D8222725BB1B7500FFF853 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B6D8222E25BB1B7500FFF853 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B6D8223025BB1B7700FFF853 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B6D8223325BB1B7700FFF853 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B6D8223525BB1B7700FFF853 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6DC3D9A25C0547200DDD89D /* ScenariosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenariosViewController.swift; sourceTree = "<group>"; };
+		B6DC3D9E25C05D2C00DDD89D /* ChoiceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceCollectionViewCell.swift; sourceTree = "<group>"; };
+		F75764930D6A122AC3CAF9FE /* Pods-idcheckio-sdk-sample-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-idcheckio-sdk-sample-ios.debug.xcconfig"; path = "Target Support Files/Pods-idcheckio-sdk-sample-ios/Pods-idcheckio-sdk-sample-ios.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B6D8222125BB1B7500FFF853 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E48FF7404235C09CE9C307A6 /* Pods_idcheckio_sdk_sample_ios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A26B62201C82186D89EAF6A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6EBC2A146FC0F209DAAC3168 /* Pods_idcheckio_sdk_sample_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B60857BC25C07E1600AABCBB /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				B60857BD25C07F6300AABCBB /* Coordinator.swift */,
+				B60857C025C07FAE00AABCBB /* MainCoordinator.swift */,
+				B60857C525C086C100AABCBB /* ScenariosCoordinator.swift */,
+				B6D37A5B25C1C85100D012C8 /* SimpleCaptureCoordinator.swift */,
+				B62269DD25D19B4C00BAD6E1 /* AdvancedCaptureCoordinator.swift */,
+				B603EDD725F76CE200E2CE7A /* OnlineFlowCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		B62269E025D19C0600BAD6E1 /* Sessions */ = {
+			isa = PBXGroup;
+			children = (
+				B62269E125D19C2600BAD6E1 /* AdvancedSessionViewController.swift */,
+				B611BED025E4126900F0A145 /* DisplayInfoViewController.swift */,
+				B603EDDA25F775DB00E2CE7A /* OnlineFlowViewController.swift */,
+			);
+			path = Sessions;
+			sourceTree = "<group>";
+		};
+		B674366625ECF50500F817CF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B674366325ECF4FF00F817CF /* UIStackView+Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B6750FBE25F135AF0011A536 /* Analyze */ = {
+			isa = PBXGroup;
+			children = (
+				B6750FBF25F135DB0011A536 /* AnalyzeManager.swift */,
+			);
+			path = Analyze;
+			sourceTree = "<group>";
+		};
+		B6C9D73725BF0F440060B0DE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B62269E025D19C0600BAD6E1 /* Sessions */,
+				B6DC3D9A25C0547200DDD89D /* ScenariosViewController.swift */,
+				B674365125ECE2DA00F817CF /* ResultViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B6D8221B25BB1B7500FFF853 = {
+			isa = PBXGroup;
+			children = (
+				B6D37C5D25C2F51000D012C8 /* licence.axt */,
+				B6D8222625BB1B7500FFF853 /* idcheckio-sdk-sample-ios */,
+				B6D8222525BB1B7500FFF853 /* Products */,
+				E3BA822A37F50014A0CF68DF /* Pods */,
+				A26B62201C82186D89EAF6A8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B6D8222525BB1B7500FFF853 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B6D8222425BB1B7500FFF853 /* idcheckio-sdk-sample-ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6D8222625BB1B7500FFF853 /* idcheckio-sdk-sample-ios */ = {
+			isa = PBXGroup;
+			children = (
+				B6750FBE25F135AF0011A536 /* Analyze */,
+				B674366625ECF50500F817CF /* Utils */,
+				B60857BC25C07E1600AABCBB /* Coordinator */,
+				B6DC3D9D25C05D1100DDD89D /* Views */,
+				B6C9D73725BF0F440060B0DE /* Controllers */,
+				B6D8222725BB1B7500FFF853 /* AppDelegate.swift */,
+				B6D8222D25BB1B7500FFF853 /* Main.storyboard */,
+				B6D8223025BB1B7700FFF853 /* Assets.xcassets */,
+				B6D8223225BB1B7700FFF853 /* LaunchScreen.storyboard */,
+				B6D8223525BB1B7700FFF853 /* Info.plist */,
+				B6C9D72A25BF08FC0060B0DE /* SDKScenario.swift */,
+				7CB20C19269835D400AD4B7A /* SDKConfig.swift */,
+			);
+			path = "idcheckio-sdk-sample-ios";
+			sourceTree = "<group>";
+		};
+		B6DC3D9D25C05D1100DDD89D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B6DC3D9E25C05D2C00DDD89D /* ChoiceCollectionViewCell.swift */,
+				B611BEEA25E41B7800F0A145 /* DisplayInfoView.swift */,
+				B611BEED25E41BA500F0A145 /* DisplayInfoView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E3BA822A37F50014A0CF68DF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F75764930D6A122AC3CAF9FE /* Pods-idcheckio-sdk-sample-ios.debug.xcconfig */,
+				418B464675DEF51D9644AC88 /* Pods-idcheckio-sdk-sample-ios.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B6D8222325BB1B7500FFF853 /* idcheckio-sdk-sample-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6D8223825BB1B7700FFF853 /* Build configuration list for PBXNativeTarget "idcheckio-sdk-sample-ios" */;
+			buildPhases = (
+				59E3DAB3239E343046A828AE /* [CP] Check Pods Manifest.lock */,
+				B6D8222025BB1B7500FFF853 /* Sources */,
+				B6D8222125BB1B7500FFF853 /* Frameworks */,
+				B6D8222225BB1B7500FFF853 /* Resources */,
+				F13AEDDAEB36FF1B3B760DDA /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "idcheckio-sdk-sample-ios";
+			productName = "idcheckio-sdk-sample-ios";
+			productReference = B6D8222425BB1B7500FFF853 /* idcheckio-sdk-sample-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B6D8221C25BB1B7500FFF853 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					B6D8222325BB1B7500FFF853 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = B6D8221F25BB1B7500FFF853 /* Build configuration list for PBXProject "idcheckio-sdk-sample-ios" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B6D8221B25BB1B7500FFF853;
+			productRefGroup = B6D8222525BB1B7500FFF853 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B6D8222325BB1B7500FFF853 /* idcheckio-sdk-sample-ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B6D8222225BB1B7500FFF853 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B611BEEE25E41BA500F0A145 /* DisplayInfoView.xib in Resources */,
+				B6D8223425BB1B7700FFF853 /* LaunchScreen.storyboard in Resources */,
+				B6D8223125BB1B7700FFF853 /* Assets.xcassets in Resources */,
+				B6D8222F25BB1B7500FFF853 /* Main.storyboard in Resources */,
+				B6D37C5E25C2F51000D012C8 /* licence.axt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		59E3DAB3239E343046A828AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-idcheckio-sdk-sample-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F13AEDDAEB36FF1B3B760DDA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-idcheckio-sdk-sample-ios/Pods-idcheckio-sdk-sample-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-idcheckio-sdk-sample-ios/Pods-idcheckio-sdk-sample-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-idcheckio-sdk-sample-ios/Pods-idcheckio-sdk-sample-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B6D8222025BB1B7500FFF853 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B603EDDB25F775DB00E2CE7A /* OnlineFlowViewController.swift in Sources */,
+				B674365225ECE2DA00F817CF /* ResultViewController.swift in Sources */,
+				B62269DE25D19B4C00BAD6E1 /* AdvancedCaptureCoordinator.swift in Sources */,
+				B611BEEB25E41B7800F0A145 /* DisplayInfoView.swift in Sources */,
+				B611BED125E4126900F0A145 /* DisplayInfoViewController.swift in Sources */,
+				B6D8222825BB1B7500FFF853 /* AppDelegate.swift in Sources */,
+				B6DC3D9B25C0547200DDD89D /* ScenariosViewController.swift in Sources */,
+				B6DC3D9F25C05D2C00DDD89D /* ChoiceCollectionViewCell.swift in Sources */,
+				B603EDD825F76CE200E2CE7A /* OnlineFlowCoordinator.swift in Sources */,
+				B674366425ECF4FF00F817CF /* UIStackView+Utils.swift in Sources */,
+				B60857C625C086C100AABCBB /* ScenariosCoordinator.swift in Sources */,
+				B60857C125C07FAE00AABCBB /* MainCoordinator.swift in Sources */,
+				B6D37A5C25C1C85100D012C8 /* SimpleCaptureCoordinator.swift in Sources */,
+				B6C9D72B25BF08FC0060B0DE /* SDKScenario.swift in Sources */,
+				7CB20C1A269835D400AD4B7A /* SDKConfig.swift in Sources */,
+				B60857BE25C07F6300AABCBB /* Coordinator.swift in Sources */,
+				B62269E225D19C2600BAD6E1 /* AdvancedSessionViewController.swift in Sources */,
+				B6750FC025F135DB0011A536 /* AnalyzeManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B6D8222D25BB1B7500FFF853 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6D8222E25BB1B7500FFF853 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B6D8223225BB1B7700FFF853 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6D8223325BB1B7700FFF853 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B6D8223625BB1B7700FFF853 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B6D8223725BB1B7700FFF853 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B6D8223925BB1B7700FFF853 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F75764930D6A122AC3CAF9FE /* Pods-idcheckio-sdk-sample-ios.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V3TX3NWAPM;
+				INFOPLIST_FILE = "idcheckio-sdk-sample-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ariadnext.idcheckio-sdk-sample-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B6D8223A25BB1B7700FFF853 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 418B464675DEF51D9644AC88 /* Pods-idcheckio-sdk-sample-ios.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V3TX3NWAPM;
+				INFOPLIST_FILE = "idcheckio-sdk-sample-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ariadnext.idcheckio-sdk-sample-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B6D8221F25BB1B7500FFF853 /* Build configuration list for PBXProject "idcheckio-sdk-sample-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6D8223625BB1B7700FFF853 /* Debug */,
+				B6D8223725BB1B7700FFF853 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6D8223825BB1B7700FFF853 /* Build configuration list for PBXNativeTarget "idcheckio-sdk-sample-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6D8223925BB1B7700FFF853 /* Debug */,
+				B6D8223A25BB1B7700FFF853 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B6D8221C25BB1B7500FFF853 /* Project object */;
+}
