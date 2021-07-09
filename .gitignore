@@ -1,41 +1,36 @@
-# Project Specifics
-
-# HFS FileSystem
+# OS X Finder
 .DS_Store
-._*
-.idea
-.svn
 
-# Xcode
-xcuserdata
-*.pbxuser
-!default.pbxuser
+# AXT License file
+*.axt
+
+# Xcode per-user config
+*.mode1
 *.mode1v3
-!default.mode1v3
 *.mode2v3
-!default.mode2v3
+*.perspective
 *.perspectivev3
-!default.perspectivev3
-*.moved-aside
-*.xcuserstate
+*.pbxuser
+xcuserdata
 *.xccheckout
-*.xcscmblueprint
-*scannerwork
 
-# Build-Generated
-DerivedData
-*/build/*
-build
-test-reports
+# Build products
+build/
+*.o
+*.LinkFileList
 *.hmap
-*.gcda
-*.gcno
 
-# Fastlane
-report.xml
-Reports
+# Automatic backup files
+*~.nib/
+*.swp
+*~
+*.dat
+*.dep
 
 # Cocoapods
-**/Pods/**
 Pods
-Podfile.lock
+Carthage
+
+# AppCode specific files
+.idea/
+*.iml
