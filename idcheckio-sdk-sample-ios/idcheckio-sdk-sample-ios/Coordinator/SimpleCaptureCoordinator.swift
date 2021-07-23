@@ -60,24 +60,31 @@ fileprivate extension SimpleCaptureCoordinator {
         //Start the capture session
         let sessionController = IdcheckioViewController()
         sessionController.modalPresentationStyle = .fullScreen
-        //Handle session result or error here
-        sessionController.resultCompletion = { [weak self] (result) in
-            guard let strongSelf = self else { return }
-            //Dissmiss SDK controller when session is complete or an error occured
-            DispatchQueue.main.async {
-                strongSelf.navigationController.dismiss(animated: true, completion: {
-                    //Go back to portrait orientaion when the sdk has finished
-                    if let myDelegate = UIApplication.shared.delegate as? AppDelegate {
-                        myDelegate.supportedOrientation = .portrait
-                    }
-                    strongSelf.parentCoordinator?.childDidFinish(strongSelf, result: result)
-                })
+        //Manage errors that could occur during SDK startup.
+        sessionController.startCompletion = { [weak self] (error) in
+            if let error = error {
+                self?.handleSdkResult(result: .failure(error))
             }
         }
+        //Handle session result or error here
+        sessionController.resultCompletion = { [weak self] in self?.handleSdkResult(result: $0) }
         //Enable all supported orientatons in App Delegate in order to launch the SDK in landscape if needed
         if let myDelegate = UIApplication.shared.delegate as? AppDelegate {
             myDelegate.supportedOrientation = .all
         }
         navigationController.present(sessionController, animated: true)
+    }
+
+    func handleSdkResult(result: Result<IdcheckioResult?, Error>) {
+        //Dissmiss SDK controller when session is complete or an error occured
+        DispatchQueue.main.async {
+            self.navigationController.dismiss(animated: true, completion: {
+                //Go back to portrait orientaion when the sdk has finished
+                if let myDelegate = UIApplication.shared.delegate as? AppDelegate {
+                    myDelegate.supportedOrientation = .portrait
+                }
+                self.parentCoordinator?.childDidFinish(self, result: result)
+            })
+        }
     }
 }

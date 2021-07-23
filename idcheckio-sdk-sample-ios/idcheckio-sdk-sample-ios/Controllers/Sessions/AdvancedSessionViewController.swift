@@ -90,9 +90,15 @@ fileprivate extension AdvancedSessionViewController {
             coordinator?.showResult(.failure(error))
             return
         }
+        //Manage errors that could occur during SDK startup.
+        controller.startCompletion = { [weak self] (error) in
+            if let error = error {
+                self?.handleSdkResult(result: .failure(error))
+            }
+        }
         //Set the completion handler for both sdk events and sdk result
-        controller.eventCompletion = handleSdkEvent
-        controller.resultCompletion = handleSdkResult
+        controller.eventCompletion = { [weak self] in self?.handleSdkEvent(interaction: $0, msg: $1) }
+        controller.resultCompletion = { [weak self] in self?.handleSdkResult(result: $0) }
         registerInteraction()
     }
     

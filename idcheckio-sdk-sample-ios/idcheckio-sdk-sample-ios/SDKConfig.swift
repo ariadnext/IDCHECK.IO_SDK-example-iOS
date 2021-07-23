@@ -48,7 +48,7 @@ enum SDKConfig: String {
             params.side2Extraction = extractionSide2
             params.orientation = .portrait
             let integrityCheck = IntegrityCheck()
-            integrityCheck.readEmrtd = true
+            integrityCheck.readEmrtd = true // Need `Near Field Communication Tag Reading` (NFC) capability.
             params.integrityCheck = integrityCheck
         case .selfie:
             params.documentType = .selfie
