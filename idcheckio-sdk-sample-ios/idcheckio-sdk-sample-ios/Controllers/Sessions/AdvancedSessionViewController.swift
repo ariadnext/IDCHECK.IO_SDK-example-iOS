@@ -122,6 +122,15 @@ fileprivate extension AdvancedSessionViewController {
                                             .hideScanAnimation,
                                             .showManualButton,
                                             .hideManualButton,
+                                            .selfieQaDontMove,
+                                            .selfieQaTooBlur,
+                                            .selfieQaWrongExposure,
+                                            .selfieQaFaceOverexposed,
+                                            .selfieQaUnstableLight,
+                                            .selfieQaNoFaceDetected,
+                                            .selfieQaFaceTooSmall,
+                                            .selfieQaFaceTooBig,
+                                            .selfieQaNotCentered,
                                             .showScanVersoSkippable,
                                             .showScanVersoNonSkippable,
                                             .wrongSide,
@@ -255,6 +264,24 @@ fileprivate extension AdvancedSessionViewController {
             let vm = DisplayInfoViewModel()
             vm.versoSkipable = true
             showInfoController(vm: vm)
+        case .selfieQaDontMove:
+            showInformation(info: "Don't move!")
+        case .selfieQaTooBlur:
+            showInformation(info: "Blur detected")
+        case .selfieQaWrongExposure:
+            showInformation(info: "Wrong exposure")
+        case .selfieQaFaceOverexposed:
+            showInformation(info: "Face overexposed")
+        case .selfieQaUnstableLight:
+            showInformation(info: "Unstable light...")
+        case .selfieQaNoFaceDetected:
+            showInformation(info: "No face detected")
+        case .selfieQaFaceTooSmall:
+            showInformation(info: "Please get closer...")
+        case .selfieQaFaceTooBig:
+            showInformation(info: "Please move away...")
+        case .selfieQaNotCentered:
+            showInformation(info: "Center your face")
         default:
             return
         }
@@ -266,19 +293,35 @@ fileprivate extension AdvancedSessionViewController {
         }
     }
     
+    /**
+     In the case of a selfie, you will receive a square, to show an oval you can stick to the left and right side of the quad and multiply the height by 1.3.
+     */
     func drawQuad(quad: Quad) {
-        let radius: CGFloat = 8.0
-
-        let dotPath = UIBezierPath(arcCenter: CGPoint(x: quad.leftTop.x, y: quad.leftTop.y), radius: radius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
-        dotPath.append(UIBezierPath(arcCenter: CGPoint(x: quad.leftBottom.x, y: quad.leftBottom.y), radius: radius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true))
-        dotPath.append(UIBezierPath(arcCenter: CGPoint(x: quad.rightTop.x, y: quad.rightTop.y), radius: radius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true))
-        dotPath.append(UIBezierPath(arcCenter: CGPoint(x: quad.rightBottom.x, y: quad.rightBottom.y), radius: radius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true))
+        var path: UIBezierPath
+        var fillColor: UIColor
+        if (Idcheckio.shared.params.documentType == .selfie) {
+            let width = quad.rightBottom.x - quad.leftBottom.x
+            let height = quad.leftBottom.y - quad.leftTop.y
+            let heightFaceMargin = height * 0.15
+            fillColor = UIColor.clear
+            
+            path = UIBezierPath(ovalIn: CGRect(x: quad.leftTop.x, y: quad.leftTop.y - heightFaceMargin, width: width, height: height + 2 * heightFaceMargin))
+        } else {
+            let radius: CGFloat = 8.0
+            fillColor = UIColor.red
+            
+            path = UIBezierPath(arcCenter: CGPoint(x: quad.leftTop.x, y: quad.leftTop.y), radius: radius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+            path.append(UIBezierPath(arcCenter: CGPoint(x: quad.leftBottom.x, y: quad.leftBottom.y), radius: radius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true))
+            path.append(UIBezierPath(arcCenter: CGPoint(x: quad.rightTop.x, y: quad.rightTop.y), radius: radius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true))
+            path.append(UIBezierPath(arcCenter: CGPoint(x: quad.rightBottom.x, y: quad.rightBottom.y), radius: radius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true))
+        }
         
         DispatchQueue.main.async {
             self.quadLayer?.removeFromSuperlayer()
             self.quadLayer = CAShapeLayer()
-            self.quadLayer?.path = dotPath.cgPath
-            self.quadLayer?.fillColor = UIColor.red.cgColor
+            self.quadLayer?.path = path.cgPath
+            self.quadLayer?.fillColor = fillColor.cgColor
+            self.quadLayer?.strokeColor = UIColor.red.cgColor
             self.quadLayer?.frame = self.quadView.frame
             self.quadView?.layer.addSublayer(self.quadLayer ??  CAShapeLayer())
         }
