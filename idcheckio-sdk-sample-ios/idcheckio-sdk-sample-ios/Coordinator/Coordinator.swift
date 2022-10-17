@@ -21,7 +21,7 @@ protocol Coordinator: AnyObject {
 extension Coordinator {
     func childDidFinish(_ child: Coordinator, result: Result<IdcheckioResult?, Error>) {}
     func displayError(error: String) {
-        let alert = UIAlertController(title: "Error", message: error, preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.navigationController.present(alert, animated: true, completion: nil)
     }

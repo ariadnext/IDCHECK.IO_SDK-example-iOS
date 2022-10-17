@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7C23A43726AAFEAB00FFA724 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C23A43626AAFEAB00FFA724 /* ExternalAccessory.framework */; };
 		7CB20C1A269835D400AD4B7A /* SDKConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB20C19269835D400AD4B7A /* SDKConfig.swift */; };
+		A833763628FDA72C00722F0F /* IpsSessionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A833763528FDA72C00722F0F /* IpsSessionCoordinator.swift */; };
+		A833763828FDA73300722F0F /* IpsFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A833763728FDA73300722F0F /* IpsFlowViewController.swift */; };
+		A899911928FDA5B80019EC7A /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899911828FDA5B80019EC7A /* Token.swift */; };
 		B603EDD825F76CE200E2CE7A /* OnlineFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B603EDD725F76CE200E2CE7A /* OnlineFlowCoordinator.swift */; };
 		B603EDDB25F775DB00E2CE7A /* OnlineFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B603EDDA25F775DB00E2CE7A /* OnlineFlowViewController.swift */; };
 		B60857BE25C07F6300AABCBB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60857BD25C07F6300AABCBB /* Coordinator.swift */; };
@@ -17,14 +20,11 @@
 		B611BED125E4126900F0A145 /* DisplayInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611BED025E4126900F0A145 /* DisplayInfoViewController.swift */; };
 		B611BEEB25E41B7800F0A145 /* DisplayInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611BEEA25E41B7800F0A145 /* DisplayInfoView.swift */; };
 		B611BEEE25E41BA500F0A145 /* DisplayInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B611BEED25E41BA500F0A145 /* DisplayInfoView.xib */; };
-		B62269DE25D19B4C00BAD6E1 /* AdvancedCaptureCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62269DD25D19B4C00BAD6E1 /* AdvancedCaptureCoordinator.swift */; };
-		B62269E225D19C2600BAD6E1 /* AdvancedSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62269E125D19C2600BAD6E1 /* AdvancedSessionViewController.swift */; };
 		B674365225ECE2DA00F817CF /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B674365125ECE2DA00F817CF /* ResultViewController.swift */; };
 		B674366425ECF4FF00F817CF /* UIStackView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B674366325ECF4FF00F817CF /* UIStackView+Utils.swift */; };
 		B6750FC025F135DB0011A536 /* AnalyzeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6750FBF25F135DB0011A536 /* AnalyzeManager.swift */; };
 		B6C9D72B25BF08FC0060B0DE /* SDKScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C9D72A25BF08FC0060B0DE /* SDKScenario.swift */; };
 		B6D37A5C25C1C85100D012C8 /* SimpleCaptureCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D37A5B25C1C85100D012C8 /* SimpleCaptureCoordinator.swift */; };
-		B6D37C5E25C2F51000D012C8 /* licence.axt in Resources */ = {isa = PBXBuildFile; fileRef = B6D37C5D25C2F51000D012C8 /* licence.axt */; };
 		B6D8222825BB1B7500FFF853 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D8222725BB1B7500FFF853 /* AppDelegate.swift */; };
 		B6D8222F25BB1B7500FFF853 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D8222D25BB1B7500FFF853 /* Main.storyboard */; };
 		B6D8223125BB1B7700FFF853 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D8223025BB1B7700FFF853 /* Assets.xcassets */; };
@@ -40,6 +40,9 @@
 		7C23A43526AAFEAB00FFA724 /* idcheckio-sdk-sample-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "idcheckio-sdk-sample-ios.entitlements"; sourceTree = "<group>"; };
 		7C23A43626AAFEAB00FFA724 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		7CB20C19269835D400AD4B7A /* SDKConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKConfig.swift; sourceTree = "<group>"; };
+		A833763528FDA72C00722F0F /* IpsSessionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IpsSessionCoordinator.swift; sourceTree = "<group>"; };
+		A833763728FDA73300722F0F /* IpsFlowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IpsFlowViewController.swift; sourceTree = "<group>"; };
+		A899911828FDA5B80019EC7A /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		B603EDD725F76CE200E2CE7A /* OnlineFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineFlowCoordinator.swift; sourceTree = "<group>"; };
 		B603EDDA25F775DB00E2CE7A /* OnlineFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineFlowViewController.swift; sourceTree = "<group>"; };
 		B60857BD25C07F6300AABCBB /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -48,14 +51,11 @@
 		B611BED025E4126900F0A145 /* DisplayInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayInfoViewController.swift; sourceTree = "<group>"; };
 		B611BEEA25E41B7800F0A145 /* DisplayInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayInfoView.swift; sourceTree = "<group>"; };
 		B611BEED25E41BA500F0A145 /* DisplayInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayInfoView.xib; sourceTree = "<group>"; };
-		B62269DD25D19B4C00BAD6E1 /* AdvancedCaptureCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedCaptureCoordinator.swift; sourceTree = "<group>"; };
-		B62269E125D19C2600BAD6E1 /* AdvancedSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSessionViewController.swift; sourceTree = "<group>"; };
 		B674365125ECE2DA00F817CF /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		B674366325ECF4FF00F817CF /* UIStackView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Utils.swift"; sourceTree = "<group>"; };
 		B6750FBF25F135DB0011A536 /* AnalyzeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeManager.swift; sourceTree = "<group>"; };
 		B6C9D72A25BF08FC0060B0DE /* SDKScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKScenario.swift; sourceTree = "<group>"; };
 		B6D37A5B25C1C85100D012C8 /* SimpleCaptureCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCaptureCoordinator.swift; sourceTree = "<group>"; };
-		B6D37C5D25C2F51000D012C8 /* licence.axt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = licence.axt; sourceTree = "<group>"; };
 		B6D8222425BB1B7500FFF853 /* idcheckio-sdk-sample-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "idcheckio-sdk-sample-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D8222725BB1B7500FFF853 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6D8222E25BB1B7500FFF853 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,11 +92,11 @@
 		B60857BC25C07E1600AABCBB /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				A833763528FDA72C00722F0F /* IpsSessionCoordinator.swift */,
 				B60857BD25C07F6300AABCBB /* Coordinator.swift */,
 				B60857C025C07FAE00AABCBB /* MainCoordinator.swift */,
 				B60857C525C086C100AABCBB /* ScenariosCoordinator.swift */,
 				B6D37A5B25C1C85100D012C8 /* SimpleCaptureCoordinator.swift */,
-				B62269DD25D19B4C00BAD6E1 /* AdvancedCaptureCoordinator.swift */,
 				B603EDD725F76CE200E2CE7A /* OnlineFlowCoordinator.swift */,
 			);
 			path = Coordinator;
@@ -105,7 +105,7 @@
 		B62269E025D19C0600BAD6E1 /* Sessions */ = {
 			isa = PBXGroup;
 			children = (
-				B62269E125D19C2600BAD6E1 /* AdvancedSessionViewController.swift */,
+				A833763728FDA73300722F0F /* IpsFlowViewController.swift */,
 				B611BED025E4126900F0A145 /* DisplayInfoViewController.swift */,
 				B603EDDA25F775DB00E2CE7A /* OnlineFlowViewController.swift */,
 			);
@@ -141,7 +141,6 @@
 		B6D8221B25BB1B7500FFF853 = {
 			isa = PBXGroup;
 			children = (
-				B6D37C5D25C2F51000D012C8 /* licence.axt */,
 				B6D8222625BB1B7500FFF853 /* idcheckio-sdk-sample-ios */,
 				B6D8222525BB1B7500FFF853 /* Products */,
 				E3BA822A37F50014A0CF68DF /* Pods */,
@@ -173,6 +172,7 @@
 				B6D8223525BB1B7700FFF853 /* Info.plist */,
 				B6C9D72A25BF08FC0060B0DE /* SDKScenario.swift */,
 				7CB20C19269835D400AD4B7A /* SDKConfig.swift */,
+				A899911828FDA5B80019EC7A /* Token.swift */,
 			);
 			path = "idcheckio-sdk-sample-ios";
 			sourceTree = "<group>";
@@ -259,7 +259,6 @@
 				B6D8223425BB1B7700FFF853 /* LaunchScreen.storyboard in Resources */,
 				B6D8223125BB1B7700FFF853 /* Assets.xcassets in Resources */,
 				B6D8222F25BB1B7500FFF853 /* Main.storyboard in Resources */,
-				B6D37C5E25C2F51000D012C8 /* licence.axt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +313,6 @@
 			files = (
 				B603EDDB25F775DB00E2CE7A /* OnlineFlowViewController.swift in Sources */,
 				B674365225ECE2DA00F817CF /* ResultViewController.swift in Sources */,
-				B62269DE25D19B4C00BAD6E1 /* AdvancedCaptureCoordinator.swift in Sources */,
 				B611BEEB25E41B7800F0A145 /* DisplayInfoView.swift in Sources */,
 				B611BED125E4126900F0A145 /* DisplayInfoViewController.swift in Sources */,
 				B6D8222825BB1B7500FFF853 /* AppDelegate.swift in Sources */,
@@ -323,12 +321,14 @@
 				B603EDD825F76CE200E2CE7A /* OnlineFlowCoordinator.swift in Sources */,
 				B674366425ECF4FF00F817CF /* UIStackView+Utils.swift in Sources */,
 				B60857C625C086C100AABCBB /* ScenariosCoordinator.swift in Sources */,
+				A833763628FDA72C00722F0F /* IpsSessionCoordinator.swift in Sources */,
 				B60857C125C07FAE00AABCBB /* MainCoordinator.swift in Sources */,
 				B6D37A5C25C1C85100D012C8 /* SimpleCaptureCoordinator.swift in Sources */,
+				A833763828FDA73300722F0F /* IpsFlowViewController.swift in Sources */,
 				B6C9D72B25BF08FC0060B0DE /* SDKScenario.swift in Sources */,
 				7CB20C1A269835D400AD4B7A /* SDKConfig.swift in Sources */,
+				A899911928FDA5B80019EC7A /* Token.swift in Sources */,
 				B60857BE25C07F6300AABCBB /* Coordinator.swift in Sources */,
-				B62269E225D19C2600BAD6E1 /* AdvancedSessionViewController.swift in Sources */,
 				B6750FC025F135DB0011A536 /* AnalyzeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

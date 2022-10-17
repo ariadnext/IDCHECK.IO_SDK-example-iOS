@@ -34,6 +34,11 @@ class OnlineFlowViewController: UIViewController {
         }
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     var documentType: DocumentType?
     weak var coordinator: OnlineFlowCoordinator?
     

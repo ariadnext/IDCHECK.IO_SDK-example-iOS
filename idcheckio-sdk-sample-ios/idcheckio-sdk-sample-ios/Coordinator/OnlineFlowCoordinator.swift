@@ -43,13 +43,12 @@ class OnlineFlowCoordinator: Coordinator {
         case .id:
             //Set isReferenceDocument to `true` for an ID that will be a reference document for the liveness session.
             sdkParams.onlineConfig.isReferenceDocument = true
-            sdkParams.onlineConfig.checkType = .checkFast
         default:
             break
         }
         do {
             try Idcheckio.shared.setParams(sdkParams)
-            Idcheckio.shared.extraParameters = sdkExtraParams
+            try Idcheckio.shared.setExtraParams(sdkExtraParams)
         } catch {
             parentCoordinator?.childDidFinish(self, result: .failure(error))
             return
@@ -61,8 +60,8 @@ class OnlineFlowCoordinator: Coordinator {
 fileprivate extension OnlineFlowCoordinator {
 
     func activateSdk() {
-        //Activate the SDK with your licence file provided by ARIADNEXT
-        Idcheckio.shared.activate(withLicenseFilename: "licence.axt", extractData: true, sdkEnvironment: .demo) { (error) in
+        // Activate the SDK with your token provided by ARIADNEXT
+        Idcheckio.shared.activate(withToken: Token.demo.rawValue, extractData: true) { error in
             if let activationError = error {
                 self.parentCoordinator?.childDidFinish(self, result: .failure(activationError))
             } else {
@@ -88,12 +87,6 @@ fileprivate extension OnlineFlowCoordinator {
         //Give online context from your previous session to link your liveness to the right CIS folder.
         sessionController.onlineContext = onlineContext
         sessionController.modalPresentationStyle = .fullScreen
-        //Manage errors that could occur during SDK startup.
-        sessionController.startCompletion = { [weak self] (error) in
-            if let error = error {
-                self?.handleSdkResult(result: .failure(error))
-            }
-        }
         //Handle session result or error here
         sessionController.resultCompletion = { [weak self] in self?.handleSdkResult(result: $0) }
         //Enable all supported orientatons in App Delegate in order to launch the SDK in landscape if needed

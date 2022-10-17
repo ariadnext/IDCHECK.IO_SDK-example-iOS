@@ -36,7 +36,6 @@ enum SDKConfig: String {
         switch self {
         case .id:
             params.documentType = .id
-            params.scanBothSides = .enabled
             params.confirmType = .dataOrPicture
             let extractionSide1 = Extraction()
             extractionSide1.codeline = .valid

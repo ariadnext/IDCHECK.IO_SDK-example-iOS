@@ -42,7 +42,9 @@ class ScenariosCoordinator: Coordinator {
             showResult(result: result)
         case .failure(let error):
             navigationController.popToRootViewController(animated: true)
-            displayError(error: error.localizedDescription)
+            // It is useful to log the detail of the error in order to understand what is happening, but this error should not be displayed to the user
+            print("❌ ERROR : \(error.localizedDescription)")
+            displayError(error: "An error has occurred, please contact the developers")
         }
     }
 
@@ -54,7 +56,9 @@ class ScenariosCoordinator: Coordinator {
             case .success(let result):
                 weakSelf.showResult(result: result)
             case .failure(let error):
-                weakSelf.displayError(error: error.localizedDescription)
+                // It is useful to log the detail of the error in order to understand what is happening, but this error should not be displayed to the user
+                print("❌ ERROR : \(error.localizedDescription)")
+                weakSelf.displayError(error: "An error has occurred, please contact the developers")
             }
         }
     }
@@ -65,10 +69,10 @@ class ScenariosCoordinator: Coordinator {
         switch scenario.captureType {
         case .simple:
             sessionCoordinator = SimpleCaptureCoordinator(navigationController: navigationController, sdkScenario: scenario)
-        case .advanced:
-            sessionCoordinator = AdvancedCaptureCoordinator(navigationController: navigationController,  sdkScenario: scenario)
         case .onlineFlow:
             sessionCoordinator = OnlineFlowCoordinator(navigationController: navigationController)
+        case .ips:
+            sessionCoordinator = IpsSessionCoordinator(navigationController: navigationController)
         default:
             return
         }

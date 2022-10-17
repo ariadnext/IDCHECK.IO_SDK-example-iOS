@@ -86,10 +86,6 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         fill()
     }
-
-    @IBAction func goBack(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
     
     func fill() {
         guard let vm = viewModel, let result = vm.result else { return }
