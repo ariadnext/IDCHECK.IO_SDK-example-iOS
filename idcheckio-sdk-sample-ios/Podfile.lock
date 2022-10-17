@@ -1,25 +1,16 @@
 PODS:
-  - IDCheckIOSDK (6.0.0):
-    - Starscream (~> 4.0.4)
-    - SwiftProtobuf (~> 1.6.0)
-  - Starscream (4.0.4)
-  - SwiftProtobuf (1.6.0)
+  - IDCheckIOSDK (7.0.0)
 
 DEPENDENCIES:
-  - IDCheckIOSDK (= 6.0.0)
+  - IDCheckIOSDK (= 7.0.0)
 
 SPEC REPOS:
   https://git-externe.rennes.ariadnext.com/idcheckio/axt-podspecs.git:
     - IDCheckIOSDK
-  https://github.com/CocoaPods/Specs.git:
-    - Starscream
-    - SwiftProtobuf
 
 SPEC CHECKSUMS:
-  IDCheckIOSDK: 57feccf02a2fba4290480c5cd76280d4a1eb64b1
-  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
-  SwiftProtobuf: e905ca1366405696411aaf174411c4b19c0ef73d
+  IDCheckIOSDK: 7e4279e0e41f0e1a54a95f9b6ac70c9e1277adc2
 
-PODFILE CHECKSUM: 5d0764523ecae94df62bc34b4e56edfe28befd4e
+PODFILE CHECKSUM: 9201d6543a7f39c36e278560c1318dfc11109afe
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.3

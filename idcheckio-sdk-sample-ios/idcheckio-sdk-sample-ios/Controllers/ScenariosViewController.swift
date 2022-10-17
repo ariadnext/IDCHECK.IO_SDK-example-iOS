@@ -34,7 +34,7 @@ class ScenariosViewController: UIViewController {
     
     @IBOutlet private weak var appDescription: UILabel! {
         didSet {
-            appDescription.text = "This is the official sample of the IDCheck.io SDK, a by-product of IDCheck.io produced by Ariadnext. You will find several examples of sdk integration there, you are free to look at the one that best meets your needs.\n\nWarning, to run this sample you will need a license file, for more information you can contact us at the following address: csm@ariadnext.com"
+            appDescription.text = "This is the official sample of the IDCheck.io SDK, a by-product of IDCheck.io produced by Ariadnext. You will find several examples of sdk integration there, you are free to look at the one that best meets your needs.\n\nWarning, to run this sample you will need a token, for more information you can contact us at the following address: csm@ariadnext.com"
         }
     }
     @IBOutlet private weak var choicesCollectionView: UICollectionView!

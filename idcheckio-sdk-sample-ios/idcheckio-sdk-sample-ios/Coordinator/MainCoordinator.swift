@@ -15,7 +15,7 @@ class MainCoordinator: Coordinator {
     
     var scenarios: [SDKScenario] = [SDKScenario(captureType: .onlineFlow),
                                     SDKScenario(captureType: .simple),
-                                    SDKScenario(captureType: .advanced),
+                                    SDKScenario(captureType: .ips),
                                     SDKScenario(captureType: .analyze)]
     
     init(navigationController: UINavigationController) {

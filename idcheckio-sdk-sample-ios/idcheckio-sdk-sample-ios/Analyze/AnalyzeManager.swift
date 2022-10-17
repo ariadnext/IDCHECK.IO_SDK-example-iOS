@@ -14,8 +14,8 @@ class AnalyzeManager {
 
     func start(images: (UIImage, UIImage?), completion: ((Result<IdcheckioResult?, Error>) -> ())?) {
         self.finishCompletion = completion
-        //Activate the SDK with your licence file provided by ARIADNEXT
-        Idcheckio.shared.activate(withLicenseFilename: "licence.axt", extractData: true, sdkEnvironment: .demo) { (error) in
+        // Activate the SDK with your token provided by ARIADNEXT
+        Idcheckio.shared.activate(withToken: Token.demo.rawValue, extractData: true) { error in
             if let activationError = error {
                 self.finishCompletion?(.failure(activationError))
                 return
@@ -42,9 +42,5 @@ extension AnalyzeManager: IdcheckioDelegate {
             return
         }
         finishCompletion?(.success(result))
-    }
-
-    func idcheckioDidSendEvent(interaction: IdcheckioInteraction, msg: IdcheckioMsg?) {
-        // Not used here.
     }
 }
