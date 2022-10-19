@@ -21,22 +21,24 @@ Just create a .netrc file in the root directory of your user and add the followi
 3. Open your terminal and execute the following commands in order to install dependencies:
  ```
 $ cd idcheckio-sdk-sample-ios
-$ pod install
+$ pod install --repo-update
 ```
 
 ⚠️ Cocoapods v1.10 is needed.
 > More information at https://cocoapods.org/
 
+4. Add your SDK's token
 
-4. Add your SDK's licence
+With your application bundle identifier, ask the [Customer Success Managers](mailto:csm@ariadnext.com) to create an `idToken` to activate the SDK. You can then integrate it in your project using the **Token.swift** file or your own file or variable:
+​
+```
+import Foundation
 
-To be able to use the sample, please :
-
-- Add your license file in the `idcheckio-sdk-sample-ios` folder of this project.
-  - _(same directory as the `idcheckio-sdk-sample-ios.xcworkspace` and the `Podfile`)_
-- Name it "**licence.axt**".
-
-> 💡&nbsp;&nbsp; Do not forget to **edit the sample's app bundle identifier to match the one configured for your license**, otherwise the SDK will throw an invaid license error.
+// TODO: Set your own IdCheck.io token
+public enum Token: String {
+    case demo = "YOUR_ID_TOKEN"
+}
+```
 
 5. Run the project
 

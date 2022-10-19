@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5985FEB328FFE54C006EF199 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5985FEB228FFE54C006EF199 /* Token.swift */; };
 		7C23A43726AAFEAB00FFA724 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C23A43626AAFEAB00FFA724 /* ExternalAccessory.framework */; };
 		7CB20C1A269835D400AD4B7A /* SDKConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB20C19269835D400AD4B7A /* SDKConfig.swift */; };
 		B603EDD825F76CE200E2CE7A /* OnlineFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B603EDD725F76CE200E2CE7A /* OnlineFlowCoordinator.swift */; };
@@ -24,7 +25,6 @@
 		B6750FC025F135DB0011A536 /* AnalyzeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6750FBF25F135DB0011A536 /* AnalyzeManager.swift */; };
 		B6C9D72B25BF08FC0060B0DE /* SDKScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C9D72A25BF08FC0060B0DE /* SDKScenario.swift */; };
 		B6D37A5C25C1C85100D012C8 /* SimpleCaptureCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D37A5B25C1C85100D012C8 /* SimpleCaptureCoordinator.swift */; };
-		B6D37C5E25C2F51000D012C8 /* licence.axt in Resources */ = {isa = PBXBuildFile; fileRef = B6D37C5D25C2F51000D012C8 /* licence.axt */; };
 		B6D8222825BB1B7500FFF853 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D8222725BB1B7500FFF853 /* AppDelegate.swift */; };
 		B6D8222F25BB1B7500FFF853 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D8222D25BB1B7500FFF853 /* Main.storyboard */; };
 		B6D8223125BB1B7700FFF853 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D8223025BB1B7700FFF853 /* Assets.xcassets */; };
@@ -36,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		418B464675DEF51D9644AC88 /* Pods-idcheckio-sdk-sample-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-idcheckio-sdk-sample-ios.release.xcconfig"; path = "Target Support Files/Pods-idcheckio-sdk-sample-ios/Pods-idcheckio-sdk-sample-ios.release.xcconfig"; sourceTree = "<group>"; };
+		5985FEB228FFE54C006EF199 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		6EBC2A146FC0F209DAAC3168 /* Pods_idcheckio_sdk_sample_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_idcheckio_sdk_sample_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C23A43526AAFEAB00FFA724 /* idcheckio-sdk-sample-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "idcheckio-sdk-sample-ios.entitlements"; sourceTree = "<group>"; };
 		7C23A43626AAFEAB00FFA724 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
@@ -55,7 +56,6 @@
 		B6750FBF25F135DB0011A536 /* AnalyzeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeManager.swift; sourceTree = "<group>"; };
 		B6C9D72A25BF08FC0060B0DE /* SDKScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKScenario.swift; sourceTree = "<group>"; };
 		B6D37A5B25C1C85100D012C8 /* SimpleCaptureCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCaptureCoordinator.swift; sourceTree = "<group>"; };
-		B6D37C5D25C2F51000D012C8 /* licence.axt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = licence.axt; sourceTree = "<group>"; };
 		B6D8222425BB1B7500FFF853 /* idcheckio-sdk-sample-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "idcheckio-sdk-sample-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D8222725BB1B7500FFF853 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6D8222E25BB1B7500FFF853 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -141,7 +141,6 @@
 		B6D8221B25BB1B7500FFF853 = {
 			isa = PBXGroup;
 			children = (
-				B6D37C5D25C2F51000D012C8 /* licence.axt */,
 				B6D8222625BB1B7500FFF853 /* idcheckio-sdk-sample-ios */,
 				B6D8222525BB1B7500FFF853 /* Products */,
 				E3BA822A37F50014A0CF68DF /* Pods */,
@@ -173,6 +172,7 @@
 				B6D8223525BB1B7700FFF853 /* Info.plist */,
 				B6C9D72A25BF08FC0060B0DE /* SDKScenario.swift */,
 				7CB20C19269835D400AD4B7A /* SDKConfig.swift */,
+				5985FEB228FFE54C006EF199 /* Token.swift */,
 			);
 			path = "idcheckio-sdk-sample-ios";
 			sourceTree = "<group>";
@@ -259,7 +259,6 @@
 				B6D8223425BB1B7700FFF853 /* LaunchScreen.storyboard in Resources */,
 				B6D8223125BB1B7700FFF853 /* Assets.xcassets in Resources */,
 				B6D8222F25BB1B7500FFF853 /* Main.storyboard in Resources */,
-				B6D37C5E25C2F51000D012C8 /* licence.axt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +326,7 @@
 				B6D37A5C25C1C85100D012C8 /* SimpleCaptureCoordinator.swift in Sources */,
 				B6C9D72B25BF08FC0060B0DE /* SDKScenario.swift in Sources */,
 				7CB20C1A269835D400AD4B7A /* SDKConfig.swift in Sources */,
+				5985FEB328FFE54C006EF199 /* Token.swift in Sources */,
 				B60857BE25C07F6300AABCBB /* Coordinator.swift in Sources */,
 				B62269E225D19C2600BAD6E1 /* AdvancedSessionViewController.swift in Sources */,
 				B6750FC025F135DB0011A536 /* AnalyzeManager.swift in Sources */,

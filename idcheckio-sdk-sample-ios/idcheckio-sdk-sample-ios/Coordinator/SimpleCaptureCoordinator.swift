@@ -29,8 +29,8 @@ class SimpleCaptureCoordinator: Coordinator {
 fileprivate extension SimpleCaptureCoordinator {
     
     func activateSdk() {
-        //Activate the SDK with your licence file provided by ARIADNEXT
-        Idcheckio.shared.activate(withLicenseFilename: "licence.axt", extractData: true, sdkEnvironment: .demo) { (error) in
+        // Activate the SDK with your token provided by ARIADNEXT
+        Idcheckio.shared.activate(withToken: Token.demo.rawValue, extractData: true) { (error) in
             if let activationError = error {
                 self.parentCoordinator?.childDidFinish(self, result: .failure(activationError))
             } else {

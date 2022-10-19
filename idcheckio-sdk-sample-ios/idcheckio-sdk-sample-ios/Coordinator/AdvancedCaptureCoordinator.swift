@@ -23,7 +23,7 @@ class AdvancedCaptureCoordinator: Coordinator {
     
     func start() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        Idcheckio.shared.activate(withLicenseFilename: "licence.axt", extractData: true, sdkEnvironment: .demo) { error in
+        Idcheckio.shared.activate(withToken: Token.demo.rawValue, extractData: true) { (error) in
             if let activationError = error {
                 self.parentCoordinator?.childDidFinish(self, result: .failure(activationError))
             } else {
