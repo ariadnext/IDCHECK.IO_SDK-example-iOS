@@ -38,12 +38,12 @@ class HomeViewController: UIViewController {
         Idcheckio.shared.preload(extractData: true)
         Idcheckio.shared.delegate = self
 
-        // Activate SDK with your licence file (name it "licence.axt" and place it in the root of the project folder)
-        Idcheckio.shared.activate(withLicenseFilename: "licence", extractData: true, sdkEnvironment: .demo) { (error: IdcheckioError?) in
+        // Activate SDK with your token
+        Idcheckio.shared.activate(withToken: "YOUR_ID_TOKEN", extractData: true) { (error: IdcheckioError?) in
             if let error = error {
                 print("Error on initialization :\(error.localizedDescription)")
 
-                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                let alert = UIAlertController(title: "Error", message: "An error has occurred, please contact the developers", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
 
