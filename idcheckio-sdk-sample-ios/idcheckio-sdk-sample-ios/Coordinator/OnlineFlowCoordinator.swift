@@ -16,7 +16,7 @@ class OnlineFlowCoordinator: Coordinator {
     
     fileprivate var onlineContext: OnlineContext?
     fileprivate var idResult: IdcheckioResult?
-    fileprivate let configs: [SDKConfig] = [.id, .liveness]
+    fileprivate let configs: [SDKConfig] = [.idOnline, .liveness]
     fileprivate var index = 0 {
         didSet {
             if index == configs.count {

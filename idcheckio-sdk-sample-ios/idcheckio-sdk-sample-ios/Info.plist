@@ -20,6 +20,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NFCReaderUsageDescription</key>
+	<string>NFC is needed to scan your document chip</string>
 	<key>NSCameraUsageDescription</key>
 	<string></string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
@@ -46,7 +48,5 @@
 		<string>A0000002471001</string>
 		<string>00000000000000</string>
 	</array>
-	<key>NFCReaderUsageDescription</key>
-	<string>NFC is needed to scan your document chip</string>
 </dict>
 </plist>

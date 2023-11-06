@@ -20,7 +20,7 @@ class AnalyzeManager {
                 self.finishCompletion?(.failure(activationError))
                 return
             }
-            let params = SDKConfig.id.sdkParams
+            let params = SDKConfig.idOffline.sdkParams
             params.integrityCheck = IntegrityCheck() // Disable readEmrtd for analyze session.
             do {
                 try Idcheckio.shared.setParams(params)

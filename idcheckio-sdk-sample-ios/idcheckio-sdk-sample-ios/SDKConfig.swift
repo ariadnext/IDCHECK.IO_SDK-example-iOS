@@ -13,7 +13,8 @@ enum ConfigError: Error {
 }
 
 enum SDKConfig: String {
-    case id = "ID"
+    case idOffline = "ID"
+    case idOnline = "ID_ONLINE"
     case selfie = "SELFIE"
     case iban = "IBAN"
     case vehicleRegistration = "VEHICLE_REGISTRATION"
@@ -22,7 +23,7 @@ enum SDKConfig: String {
     case liveness = "LIVENESS"
 
     static var scenarioConfigs: [SDKConfig] {
-        return [.id,
+        return [.idOffline,
                 .selfie,
                 .iban,
                 .vehicleRegistration,
@@ -34,9 +35,10 @@ enum SDKConfig: String {
     var sdkParams: SDKParams {
         let params = SDKParams()
         switch self {
-        case .id:
+        case .idOffline:
             params.documentType = .id
             params.confirmType = .dataOrPicture
+            params.scanBothSides = .enabled
             let extractionSide1 = Extraction()
             extractionSide1.codeline = .valid
             extractionSide1.face = .enabled
@@ -46,9 +48,9 @@ enum SDKConfig: String {
             extractionSide2.face = .disabled
             params.side2Extraction = extractionSide2
             params.orientation = .portrait
-            let integrityCheck = IntegrityCheck()
-            integrityCheck.readEmrtd = true // Need `Near Field Communication Tag Reading` (NFC) capability.
-            params.integrityCheck = integrityCheck
+        case .idOnline:
+            params.documentType = .id
+            params.orientation = .portrait
         case .selfie:
             params.documentType = .selfie
             params.orientation = .portrait
