@@ -15,11 +15,11 @@ struct ResultEntry {
 }
 
 class ResultViewMoodel {
-    
+
     internal init(result: IdcheckioResult?) {
         self.result = result
     }
-    
+
     var result: IdcheckioResult?
     var resultEntries: [ResultEntry] {
         switch result?.document {
@@ -50,8 +50,6 @@ class ResultViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak private var pagerScrollView: UIScrollView! {
         didSet {
-            pagerScrollView.layer.borderWidth = 2.0
-            pagerScrollView.layer.borderColor = UIColor(named: "BlueAriadnext")?.cgColor
             pagerScrollView.isPagingEnabled = true
             pagerScrollView.showsHorizontalScrollIndicator = false
             pagerScrollView.delegate = self
@@ -62,8 +60,8 @@ class ResultViewController: UIViewController {
     @IBOutlet weak private var pagerStackView: UIStackView!
     @IBOutlet weak private var pageControl: UIPageControl! {
         didSet {
-            pageControl.pageIndicatorTintColor = UIColor(named: "BlueAriadnext")?.withAlphaComponent(0.2)
-            pageControl.currentPageIndicatorTintColor = UIColor(named: "BlueAriadnext")
+            pageControl.pageIndicatorTintColor =  UIColor(red: 0.906, green: 0.361, blue: 0.2, alpha: 0.2)
+            pageControl.currentPageIndicatorTintColor =  UIColor(red: 0.906, green: 0.361, blue: 0.2, alpha: 1)
         }
     }
     @IBOutlet private weak var mainTableView: UITableView! {
@@ -73,7 +71,7 @@ class ResultViewController: UIViewController {
             mainTableView.tableFooterView = UIView() // Remove extra empty cell separators
         }
     }
-    
+
     static let identifier: String = "ResultViewController"
     var numberOfPage: Int = 0 {
         didSet {
@@ -84,9 +82,11 @@ class ResultViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 0.906, green: 0.361, blue: 0.2, alpha: 1)
         fill()
     }
-    
+
     func fill() {
         guard let vm = viewModel, let result = vm.result else { return }
         loadPager(with: result.images)
@@ -164,9 +164,9 @@ extension ResultViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 class ResultEntryCell: UITableViewCell {
-    
+
     static let identifier = "ResultEntryCellIdentifier"
-    
+
     // MARK: - Outlets
     @IBOutlet private weak var resultTitleLabel: UILabel! {
         didSet {

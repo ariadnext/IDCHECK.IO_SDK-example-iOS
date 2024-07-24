@@ -8,5 +8,5 @@
 import Foundation
 
 public enum Token: String {
-    case demo = "YOUR_ID_TOKEN"
+    case demo = "YOUR_ID_TOKEN" // TODO: Replace demo token by your own token
 }

@@ -1,4 +1,4 @@
-![ARIADNEXT Logo](img/logo.png)
+![IDnow Logo](img/idcheck_logo.png)
 
 > 💡 For older IDCheckIOSDK sample (v5.x.x), please checkout the [sdk_v5](https://github.com/ariadnext/IDCHECK.IO_SDK-example-iOS/tree/sdk_v5) branch
 
@@ -8,7 +8,7 @@
 
 To get this sample running, please follow the instructions :
 
- 1. Ask our [Customer Success Managers](mailto:csm@ariadnext.com) for credentials to access the *ARIADNEXT* external repository in order to retrieve the **IDCheck.io Mobile SDK** library and integrate it to the project.
+ 1. Ask our [Customer Success Managers](mailto:csm@idnow.com) for credentials to access the *IDnow* external repository in order to retrieve the **IDCheck.io Mobile SDK** library and integrate it to the project.
 
  2. To be able to fetch IDCheckIOSDK, you need to have a .netrc file with your credentials given by our team to let Cocoapods authenticate through our Nexus repository.
 Just create a .netrc file in the root directory of your user and add the following lines :
@@ -26,10 +26,10 @@ Just create a .netrc file in the root directory of your user and add the followi
   $ pod install --repo-update
   ```
 
-  ⚠️ **Cocoapods v1.10 is needed** > More information at https://cocoapods.org/
+  ⚠️ **Cocoapods v1.14 is needed** > More information at https://cocoapods.org/
 
 4. Add your SDK's token
-  With your application bundle identifier, ask the [Customer Success Managers](mailto:csm@ariadnext.com) to create an `idToken` to activate the SDK. You can then integrate it in your project using the **Token.swift** file or your own file or variable:
+ With your application bundle identifier, ask the [Customer Success Managers](mailto:csm@idnow.com) to create an `idToken` to activate the SDK. You can then integrate it in your project using the **Token.swift** file or your own file or variable:
 
   ```swift
   import Foundation
@@ -47,11 +47,9 @@ You are now good to go !
 ​
 This sample project aims to showcase all possibilities of the **IDCheck.io Mobile SDK** and the associated best practices regarding these features. It also helps you understand how you can easily integrate the SDK, activate it and customise/adapt it to your application and business needs.
 ​
-The main screen displays a sliding tile to choose between four distinct capture flows :
+The main screen displays two buttons to choose between distinct capture flows :
 ​
- - **Online flow** : this flow uses the SDK for capturing an ID document first, and then continues with a Biometric Liveness session capture. It shows what you need to do in order to chain multiple online captures and keep transferring the *OnlineContext* through all these captures.
- - **Simple capture** : this flow has a specific selector to show you how to setup the SDK in order to capture a specific document (from ID to address proof, or even selfie).
- - **IPS session** : Specific capture session that will handle ID + Biometric Liveness capture in the most secure way (PVID certified).
- - **Analyze** : this flow uses the `Idcheckio.analyze` API which is useful when you don't want to use the camera feed for live-capturing and analyzing a document, but instead use a static image provided by the user from his phone's gallery.
+ - **Online flow** : This flow uses the SDK for starting one session to capture only one document. You can configure wich type of document you want to capture with recommended configurations indicated in the *SDKConfig.swift* file.
+ - **Onboarding flow** (**Recommended**) : This is a flow that allows you to chain several sessions (for example identity document + bioliveness). To configure the session you must contact [Customer Success Managers](mailto:csm@idnow.com).
 ​
-Select the flow you want to try, and click on *Give it a try* button to start capturing documents with the SDK.
+Select the flow you want to try to start capturing documents with the SDK.

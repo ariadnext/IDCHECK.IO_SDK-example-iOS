@@ -12,20 +12,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var supportedOrientation: UIInterfaceOrientationMask = .portrait
-    
+
     var coordinator: MainCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let navigationController = UINavigationController()
         navigationController.navigationBar.isHidden = true
-        
+
         coordinator = MainCoordinator(navigationController: navigationController)
-        
+
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        
+
         coordinator?.start()
         return true
     }

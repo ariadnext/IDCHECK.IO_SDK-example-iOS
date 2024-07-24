@@ -1,16 +1,20 @@
 PODS:
-  - IDCheckIOSDK (7.0.0)
+  - IDCheckIOSDK (8.0.0):
+    - SunflowerUIKit (= 1.0.9)
+  - SunflowerUIKit (1.0.9)
 
 DEPENDENCIES:
-  - IDCheckIOSDK (= 7.0.0)
+  - IDCheckIOSDK (= 8.0.0)
 
 SPEC REPOS:
-  https://git-externe.rennes.ariadnext.com/idcheckio/axt-podspecs.git:
+  https://gitlab.rennes.ariadnext.com/mobile/podspecs-private-repo.git:
     - IDCheckIOSDK
+    - SunflowerUIKit
 
 SPEC CHECKSUMS:
-  IDCheckIOSDK: 7e4279e0e41f0e1a54a95f9b6ac70c9e1277adc2
+  IDCheckIOSDK: 330f1b95a69cd5ffe0e0c0022df255130d5292ac
+  SunflowerUIKit: 694e07cd3a2a007d2996a6f27263dc941eb5d154
 
-PODFILE CHECKSUM: 9201d6543a7f39c36e278560c1318dfc11109afe
+PODFILE CHECKSUM: 0cfe57e26f2dcd4219303bb2ae1077a2f4ac3a2f
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.14.3
