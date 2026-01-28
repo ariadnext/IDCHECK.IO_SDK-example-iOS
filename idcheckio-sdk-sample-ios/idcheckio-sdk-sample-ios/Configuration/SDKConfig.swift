@@ -8,10 +8,7 @@
 import Foundation
 import IDCheckIOSDK
 
-enum ConfigError: Error {
-    case emptyConfig
-}
-
+/// Configuration to use in an `Online` sdk session.
 enum SDKConfig {
     case idDocument
     case selfie
@@ -21,15 +18,7 @@ enum SDKConfig {
     case frenchHealthCard
     case liveness
 
-    static var scenarioConfigs: [SDKConfig] {
-        return [.selfie,
-                .iban,
-                .vehicleRegistration,
-                .addressProof,
-                .frenchHealthCard]
-    }
-
-    // Best practice parameters for each session type.
+    /// Best practice parameters for each session type.
     var sdkParams: SDKParams {
         let params = SDKParams()
         switch self {
@@ -40,16 +29,16 @@ enum SDKConfig {
         case .selfie:
             params.documentType = .selfie
             params.orientation = .portrait
-            params.confirmType = .dataOrPicture
+            params.confirmType = .croppedPicture
             params.useHD = true
         case .iban:
             params.documentType = .photo
-            params.onlineConfig.cisType = .iban // Needed for online session.
+            params.onlineConfig.cisType = .iban
             params.orientation = .portrait
-            params.confirmType = .dataOrPicture
+            params.confirmType = .croppedPicture
         case .vehicleRegistration:
             params.documentType = .vehicleRegistration
-            params.confirmType = .dataOrPicture
+            params.confirmType = .croppedPicture
             let extractionSide1 = Extraction()
             extractionSide1.codeline = .valid
             extractionSide1.face = .disabled
@@ -57,13 +46,13 @@ enum SDKConfig {
             params.orientation = .portrait
         case .addressProof:
             params.documentType = .a4
-            params.onlineConfig.cisType = .addressProof // Needed for online session.
+            params.onlineConfig.cisType = .addressProof
             params.orientation = .portrait
-            params.confirmType = .dataOrPicture
+            params.confirmType = .croppedPicture
             params.useHD = true
         case .frenchHealthCard:
             params.documentType = .frenchHealthCard
-            params.confirmType = .dataOrPicture
+            params.confirmType = .croppedPicture
             params.orientation = .portrait
         case .liveness:
             params.documentType = .liveness
@@ -72,7 +61,7 @@ enum SDKConfig {
         return params
     }
 
-    // Best practice extra parameters for each session type.
+    /// Best practice extra parameters for each session type.
     var sdkExtraParams: SDKExtraParams {
         let extraParams = SDKExtraParams()
         switch self {

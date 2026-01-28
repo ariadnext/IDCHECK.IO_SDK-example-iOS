@@ -8,29 +8,52 @@
 import UIKit
 import IDCheckIOSDK
 
-class MainCoordinator: Coordinator {
-    var childCoordinators = [Coordinator]()
-    var navigationController: UINavigationController
-    var parentCoordinator: Coordinator?
+/// Coordinator that will handle view controllers
+@MainActor
+class MainCoordinator {
+    // MARK: - Properties
+    private var onlineContext: OnlineContext?
+    private var idResult: IdcheckioResult?
+    private var navigationController: UINavigationController
 
-    fileprivate var onlineContext: OnlineContext?
-    fileprivate var idResult: IdcheckioResult?
-
-    fileprivate let myCustomTheme = Theme(foregroundColor: .white,
-                                          backgroundColor: UIColor(red: 44/255, green: 58/255, blue: 71/255, alpha: 1),
-                                          borderColor: UIColor(red: 96/255, green: 163/255, blue: 188/255, alpha: 1), // Dupain
-                                          primaryColor: UIColor(red: 60/255, green: 99/255, blue: 130/255, alpha: 1), // Good samaritan
-                                          titleColor: UIColor(red: 60/255, green: 99/255, blue: 130/255, alpha: 1), // Good samaritan
-                                          textColor: UIColor(red: 10/255, green: 61/255, blue: 98/255, alpha: 1)) // Forest blues
-
+    // MARK: - Init
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 
+    // MARK: - Coordinator methods
     func start() {
         showMainView()
     }
+}
 
+// MARK: - HomeDelegate methods
+@MainActor
+extension MainCoordinator: HomeDelegate {
+    func handleTapOnOnlineFlow() {
+        startOnlineFlow()
+    }
+
+    func handleTapOnOnboardingFlow() {
+        self.askFolderUID()
+    }
+}
+
+// MARK: - FolderUIDDelegate methods
+@MainActor
+extension MainCoordinator: FolderUIDDelegate {
+    func startOnboarding(with folderUID: String) {
+        startOnboardingFlow(with: folderUID)
+    }
+
+    func onError(error: String) {
+        displayError(error: error)
+    }
+}
+
+// MARK: - Private methods
+@MainActor
+private extension MainCoordinator {
     func showMainView() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: HomeViewController.identifier) as? HomeViewController {
@@ -46,74 +69,66 @@ class MainCoordinator: Coordinator {
     func askFolderUID() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: FolderUIDViewController.identifier) as? FolderUIDViewController {
-            vc.coordinator = self
+            vc.delegate = self
             navigationController.pushViewController(vc, animated: true)
         }
     }
 
-    func startOnboardingFlow(with folder: String) {
-        self.navigationController.popViewController(animated: true)
-        // Active the IDcheckio sdk
-        self.activateSdk { [weak self] in
-            let currentViewController = self?.navigationController.topViewController ?? UIViewController()
-            let myCustomization = OnboardingCustomization(theme: self?.myCustomTheme ?? Theme(), orientation: .portrait)
-            Idcheckio.startOnboarding(with: folder,
-                                      from: currentViewController,
-                                      onboardingCustomization: myCustomization) { [weak self] result in
-                switch result {
-                case .success:
-                    self?.displaySuccess(message: "Onboarding completed")
-                case .failure(let error):
-                    self?.displayError(error: "Start onboarding flow failed : \(error)")
-                }
-            }
+    /// Activates the SDK
+    /// - returns true if the SDK is activated, false elsewhere
+    func activateSdk() async -> Bool {
+        do {
+            try await Idcheckio.activate(withToken: Token.demo.rawValue, extractData: true)
+            return true
+        } catch {
+            displayError(error: "An error occured during activation of the SDK : \(error)")
+            return false
         }
-
     }
 
     func startOnlineFlow() {
-        // Active the IDcheckio sdk
-        self.activateSdk { [weak self] in
-            // Set params of the session
-            let currentSessionConfig = SDKConfig.idDocument
+        Task(priority: .userInitiated) { @MainActor in
+            // Activate the IDcheckio sdk
+            let isSDKActivated = await activateSdk()
+            guard isSDKActivated else { return }
+
             do {
-                try Idcheckio.shared.setParams(currentSessionConfig.sdkParams)
-                try Idcheckio.shared.setExtraParams(currentSessionConfig.sdkExtraParams)
-            } catch let error {
-                self?.displayError(error: "Set params and extra params of the SDK failed : \(error)")
-                return
+                // Get the result
+                let sessionResult = try await Idcheckio.startSession(onlineContext: onlineContext,
+                                                                     sdkParams: SDKConfig.idDocument.sdkParams,
+                                                                     sdkExtraParams: SDKConfig.idDocument.sdkExtraParams)
+                // Save the online context for future use if needed
+                self.onlineContext = sessionResult?.onlineContext
+
+                // Show the result
+                self.showResult(result: sessionResult)
+            } catch {
+                self.displayError(error: "SDK session failed : \(error)")
             }
-            Idcheckio.shared.theme = self?.myCustomTheme ?? Theme()
-            // Start the capture session
-            let sessionController = IdcheckioViewController()
-            // Give online context from your previous session to link your liveness to the right CIS folder.
-            sessionController.onlineContext = self?.onlineContext
-            sessionController.modalPresentationStyle = .fullScreen
-            // Handle session result or error here
-            sessionController.resultCompletion = { [weak self] in self?.handleSdkResult(result: $0) }
-            self?.navigationController.present(sessionController, animated: true)
         }
     }
 
-    private func handleSdkResult(result: Result<IdcheckioResult?, Error>) {
-        // Dismiss SDK controller when session is complete or an error occured
-        DispatchQueue.main.async {
-            self.navigationController.dismiss(animated: true, completion: {
-                switch result {
-                case .success(let result):
-                    guard let sessionResult = result else { return }
-                    // Save the online context to give to next sessions.
-                    self.onlineContext = sessionResult.onlineContext
-                    self.showResult(result: sessionResult)
-                case .failure(let error):
-                    self.displayError(error: "SDK session failed : \(error)")
-                }
-            })
+    func startOnboardingFlow(with folderUID: String) {
+        Task(priority: .userInitiated) { @MainActor in
+            navigationController.popViewController(animated: true)
+
+            // Activate the IDcheckio sdk
+            let isSDKActivated = await activateSdk()
+            guard isSDKActivated else { return }
+
+            do {
+                // Start the onboarding flow.
+                // No result is needed, as everything is handled by the SDK in this mode !
+                try await Idcheckio.startOnboarding(with: folderUID)
+                displaySuccess(message: "Onboarding completed")
+            } catch {
+                displayError(error: "Start onboarding flow failed : \(error)")
+            }
         }
     }
 
-    private func showResult(result: IdcheckioResult?) {
-        let viewModel = ResultViewMoodel(result: result)
+    func showResult(result: IdcheckioResult?) {
+        let viewModel = ResultViewModel(result: result)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: ResultViewController.identifier ) as? ResultViewController {
             vc.viewModel =  viewModel
@@ -121,24 +136,15 @@ class MainCoordinator: Coordinator {
         }
     }
 
-    private func activateSdk(completion: @escaping () -> Void) {
-        // Activate the SDK with your token provided by IDnow
-        Idcheckio.shared.activate(withToken: Token.demo.rawValue, extractData: true) { [weak self] error in
-            if let activationError = error {
-                self?.displayError(error: "An error occured during activation of the SDK : \(activationError)")
-            } else {
-                completion()
-            }
-        }
-    }
-}
-
-extension MainCoordinator: HomeDelegate {
-    func handleTapOnOnlineFlow() {
-        self.startOnlineFlow()
+    func displaySuccess(message: String) {
+        let alert = UIAlertController(title: "🎉 Success", message: message.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.navigationController.present(alert, animated: true, completion: nil)
     }
 
-    func handleTapOnOnboardingFlow() {
-        self.askFolderUID()
+    func displayError(error: String) {
+        let alert = UIAlertController(title: "❌ Error", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.navigationController.present(alert, animated: true, completion: nil)
     }
 }
